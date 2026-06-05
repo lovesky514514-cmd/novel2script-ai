@@ -14,7 +14,7 @@ Schema 的设计目标不是单纯让 AI 输出一份 YAML，而是让剧本具�
 
 ## 2. 顶层结构
 
-推荐 YAML 顶层结构如下：
+YAML 顶层结构如下：
 
 ```yaml
 metadata:

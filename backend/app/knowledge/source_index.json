@@ -1,0 +1,42 @@
+[
+  {
+    "id": "source_a_001",
+    "title": "影视剧本创作与鉴赏笔记",
+    "usage": "影视剧本基础、改编、短视频结构"
+  },
+  {
+    "id": "source_a_002",
+    "title": "动画剧本创作笔记",
+    "usage": "动画化、视觉化、人物识别度"
+  },
+  {
+    "id": "source_a_003",
+    "title": "影视剧本写作笔记",
+    "usage": "文学改编、角色、对白、结构"
+  },
+  {
+    "id": "source_b_001",
+    "title": "中文编剧视频原创学习笔记",
+    "usage": "短剧节奏、钩子、潜台词、人味"
+  },
+  {
+    "id": "source_pdf_001",
+    "title": "编剧班课程表",
+    "usage": "大纲、场景写作、角色开发"
+  },
+  {
+    "id": "source_pdf_002",
+    "title": "影视导演基础课程大纲",
+    "usage": "导演视角、调度、时间空间声音"
+  },
+  {
+    "id": "source_pdf_003",
+    "title": "One Sentence, One Drama",
+    "usage": "多智能体、Reviewer Loop、Patch Rewrite"
+  },
+  {
+    "id": "source_pdf_004",
+    "title": "剧本写作课程大纲",
+    "usage": "对白、读剧、冲突、起承转合"
+  }
+]

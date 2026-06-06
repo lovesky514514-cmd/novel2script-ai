@@ -31,7 +31,8 @@
 - 初始化复用说明；
 - 初始化 PR 模板；
 - 明确项目技术路线；
-- 明确小说转剧本的多阶段工作流。
+- 明确小说转剧本的多阶段工作流；
+- 初始化 FastAPI 后端基础结构。
 
 #### 当前思路
 
@@ -46,9 +47,9 @@
 ↓
 角色 / 事件 / 伏笔 / 时间线记忆库
 ↓
-剧本专家 Agent
+剧本生成 Agent
 ↓
-剧本医生 Agent
+剧本医生 / Final Guard
 ↓
 YAML Schema 校验
 ↓
@@ -57,26 +58,49 @@ YAML Schema 校验
 结果预览与导出
 ```
 
-#### 计划
-
-- 搭建后端 FastAPI 基础结构；
-- 搭建前端 React + Vite 基础结构；
-- 设计小说事实记忆库的数据结构；
-- 实现基础章节切分和示例数据。
-
 ---
 
 ### Day 2：核心工作流开发
 
-#### 计划
+#### 已完成
 
-- 实现章节切分；
-- 实现角色、事件、地点、伏笔抽取；
-- 实现 AIClient；
-- 实现基础剧本 YAML 生成；
-- 实现 YAML Schema 校验；
-- 实现缓存和调用日志；
-- 增加准确性报告初版。
+- 搭建 React + Vite 前端工作台；
+- 搭建 FastAPI 后端接口；
+- 接入 DeepSeek API；
+- 实现小说上传、补充要求输入和异步生成任务；
+- 实现生成中页面、进度条和阶段提示；
+- 修复生成时浏览器打开新标签的问题；
+- 实现结果页左右布局；
+- 左侧展示分场剧本，右侧支持继续修改；
+- 支持 YAML / TXT 导出；
+- 增加 `story_bible`、`chapter_facts`、`model_trace`、`repair_questions`；
+- 增加 `validation_report` 和 `quality_report`；
+- 增加 `error_patterns.yaml` 错误知识库；
+- 增加日志与隐私说明；
+- 清理 public 图标，只保留 favicon；
+- 准备 `feature/day2-fullstack-polish` 分支提交版本。
+
+#### 当前结果
+
+Day 2 已经完成从“后端初始化”到“前后端可运行原型”的升级。
+
+当前项目可以完成：
+
+```text
+小说文本上传
+↓
+用户补充要求输入
+↓
+后端异步生成
+↓
+生成进度展示
+↓
+分场剧本预览
+↓
+YAML / TXT 导出
+↓
+继续修改
+```
 
 ---
 
@@ -84,43 +108,41 @@ YAML Schema 校验
 
 #### 计划
 
-- 完善前端工作台；
-- 增加七牛云风格视觉设计；
-- 增加结果卡片、步骤流和导出按钮；
-- 增加剧本预览区；
-- 补充 Demo 示例；
+- 完善 Demo 示例；
 - 录制 Demo 视频；
-- 完善 README 和运行说明；
-- 将仓库和 Demo 视频设置为公开可访问。
+- 补充在线访问地址；
+- 完善比赛提交说明；
+- 根据评审要求补充截图和运行说明；
+- 合并 Day 2 分支到主分支。
 
 ## PR 记录
 
-后续每个 PR 合并后，在这里补充摘要。
-
 | PR | 内容 | 状态 |
 |---|---|---|
-| PR 1 | 初始化项目说明、Schema 文档与合规说明 | 待提交 |
+| PR 1 | 初始化项目说明、Schema 文档与合规说明 | 已完成 |
+| PR 2 | 初始化 FastAPI 后端与基础接口 | 已完成 |
+| PR 3 | 集成前后端小说转剧本工作流 | 待提交 |
 
 ## Commit 记录说明
 
-本项目将使用语义化 commit，示例：
+本项目使用语义化 commit，示例：
 
 ```text
-docs: 初始化项目说明与合规文档
-chore: 初始化前后端项目结构
-feat: 实现小说章节切分
-feat: 增加小说事实记忆库
-feat: 实现 YAML Schema 校验
-fix: 修复 YAML 输出字段缺失问题
-style: 优化前端卡片和步骤流动效
+docs: initialize project documents
+chore: initialize backend service
+feat: integrate fullstack novel2script pipeline
+fix: prevent browser from opening file in new tab
+docs: align day2 documentation with implemented workflow
 ```
 
-## 风险记录
+## 当前分支建议
 
-| 风险 | 解决思路 |
-|---|---|
-| AI 长文本改编时遗忘前文 | 使用事实记忆库和上下文压缩 |
-| AI 输出 YAML 格式错误 | 使用 Schema 校验和自动修复 |
-| 剧本内容太像 AI 改写 | 加入剧本医生 Agent 和剧作规则库 |
-| 人物性格前后不一致 | 建立角色记忆表和一致性检查 |
-| 最后提交不符合规则 | 使用小 PR 和持续 commit 记录 |
+```text
+feature/day2-fullstack-polish
+```
+
+## 提交信息建议
+
+```text
+Day 2: integrate fullstack Novel2Script pipeline
+```

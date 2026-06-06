@@ -1,0 +1,166 @@
+[
+  {
+    "id": "adapt_001",
+    "category": "adaptation",
+    "title": "改编先提炼核心",
+    "rule": "小说改剧本前先提炼核心冲突、主线人物、主题问题和关键事件。",
+    "apply_when": [
+      "memory_builder",
+      "context_builder"
+    ],
+    "check_points": [
+      "核心冲突是否明确",
+      "主线人物是否明确"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_002",
+    "category": "adaptation",
+    "title": "内心独白外化",
+    "rule": "小说内心独白应转化为动作、道具互动、对白、停顿或场景调度。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否保留心理意义",
+      "是否改成可表演内容"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_003",
+    "category": "adaptation",
+    "title": "长篇叙事压缩",
+    "rule": "长篇内容应按主线目标压缩，支线只保留能推动主线或人物变化的部分。",
+    "apply_when": [
+      "context_builder"
+    ],
+    "check_points": [
+      "是否删除无功能支线",
+      "是否保留主线因果"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_004",
+    "category": "adaptation",
+    "title": "多线人物取舍",
+    "rule": "多线人物应按冲突价值、关系价值和情绪价值筛选。",
+    "apply_when": [
+      "memory_builder",
+      "report_generator"
+    ],
+    "check_points": [
+      "人物是否服务主线",
+      "是否有重复功能人物"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_005",
+    "category": "adaptation",
+    "title": "文学意象影像化",
+    "rule": "小说意象应转化为可见物件、场景色彩、声音或重复动作。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "意象是否可见",
+      "是否能重复出现"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_006",
+    "category": "adaptation",
+    "title": "保留核心关系",
+    "rule": "改编时优先保留原作核心人物关系和关系变化。",
+    "apply_when": [
+      "memory_builder",
+      "report_generator"
+    ],
+    "check_points": [
+      "关系是否保留",
+      "关系是否有变化"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_007",
+    "category": "adaptation",
+    "title": "删减不等于删除意义",
+    "rule": "删掉情节时应保留其承担的情绪、信息或人物功能。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "删减后功能是否转移"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_008",
+    "category": "adaptation",
+    "title": "场景合并要保留转折",
+    "rule": "合并多个小说段落时，必须保留关键转折和因果连接。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "转折是否丢失",
+      "因果是否清楚"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_009",
+    "category": "adaptation",
+    "title": "原文事件可追溯",
+    "rule": "每个剧本场景应绑定来源章节和来源事件。",
+    "apply_when": [
+      "schema_validator",
+      "report_generator"
+    ],
+    "check_points": [
+      "source_chapter 是否存在",
+      "source_events 是否存在"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "adapt_010",
+    "category": "adaptation",
+    "title": "风格服务受众",
+    "rule": "改编风格应根据短剧、影视剧本、动画漫剧等目标形态调整节奏和表达。",
+    "apply_when": [
+      "context_builder",
+      "script_writer"
+    ],
+    "check_points": [
+      "目标形态是否明确"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

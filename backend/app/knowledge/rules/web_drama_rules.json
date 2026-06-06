@@ -1,0 +1,157 @@
+[
+  {
+    "id": "web_001",
+    "category": "web_drama",
+    "title": "开场进入冲突现场",
+    "rule": "短剧开场不要先铺世界观，优先开在正在发生的问题中。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "开场是否有问题",
+      "是否慢铺设定"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_002",
+    "category": "web_drama",
+    "title": "前三十秒建立目标阻碍",
+    "rule": "短剧前段应让观众知道谁遇到麻烦、想要什么、为什么不能马上解决。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "目标是否明确",
+      "阻碍是否明确"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_003",
+    "category": "web_drama",
+    "title": "场尾必须留问题",
+    "rule": "场尾应留下新问题、新危机、新选择或新误会。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "结尾是否有钩子"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_004",
+    "category": "web_drama",
+    "title": "小解决大不解决",
+    "rule": "可以解决本场小矛盾，但要打开更大的矛盾。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "是否有更大问题"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_005",
+    "category": "web_drama",
+    "title": "钩子从前文生长",
+    "rule": "反转和钩子必须有前文信息支撑。",
+    "apply_when": [
+      "script_doctor",
+      "report_generator"
+    ],
+    "check_points": [
+      "钩子是否空降"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_006",
+    "category": "web_drama",
+    "title": "信息密度高",
+    "rule": "短剧场景应减少无功能人物、设定和闲聊。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有冗余"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_007",
+    "category": "web_drama",
+    "title": "情绪爆点前置",
+    "rule": "重要情绪刺激应尽早出现，避免长时间铺垫。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "爆点是否过晚"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_008",
+    "category": "web_drama",
+    "title": "反转改变处境",
+    "rule": "反转应改变人物关系、目标或危险，不只是换一个答案。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "反转是否改变处境"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_009",
+    "category": "web_drama",
+    "title": "冲突逐步升级",
+    "rule": "中段场景应增加代价、压力、信息差或选择难度。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "压力是否升级"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "web_010",
+    "category": "web_drama",
+    "title": "结尾有传播点",
+    "rule": "短剧结尾应有记忆点、反差、情绪或未完成动作。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有记忆点"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

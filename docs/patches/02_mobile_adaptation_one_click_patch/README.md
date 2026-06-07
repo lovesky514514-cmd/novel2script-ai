@@ -35,5 +35,4 @@ backend
 Nginx
 证书
 .env
-skyzhiyi.cc.cd
 ```

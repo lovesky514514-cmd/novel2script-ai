@@ -3,8 +3,7 @@
 AI 小说转剧本工具。  
 线上演示：<https://n2s.cc.cd>
 
-> Demo 视频链接：**请在提交前替换为可直接在线观看的公开视频链接**  
-> 示例：`https://...`
+> Demo 视频链接：<https://screenapp.io/app/v/tFuaRGdWuX>
 
 ## 1. 项目简介
 

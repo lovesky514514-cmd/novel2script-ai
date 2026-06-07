@@ -4,12 +4,6 @@ Novel2Script AI 是一个面向小说文本改编的 AI 工具原型，用于将
 
 本项目不是单纯聊天页面，而是围绕“小说上传 → 章节事实抽取 → 分场剧本生成 → 质量校验 → 错误知识库沉淀 → 结构化导出”的完整工作流实现。
 
-## 当前版本
-
-```text
-day2_fullstack_polish
-```
-
 ## 核心功能
 
 - 小说文本文件上传；
@@ -81,7 +75,6 @@ AI_CHAT_MODEL=deepseek-chat
 AI_PRO_MODEL=deepseek-reasoner
 ```
 
-公开仓库中不要提交真实 API Key。
 
 ## 目录结构
 
@@ -156,17 +149,3 @@ backend/app/knowledge/error_patterns.yaml
 本项目使用 DeepSeek API 作为大模型能力来源，前后端、流程编排、事实绑定、错误知识库、校验报告和导出结构均围绕本项目重新实现。
 
 项目不内置未授权小说、影视剧本或课程内容。演示时建议使用自写样例文本或已授权文本。
-
-## GitHub 分支说明
-
-Day 2 任务建议提交到分支：
-
-```text
-feature/day2-fullstack-polish
-```
-
-建议提交信息：
-
-```text
-Day 2: integrate fullstack Novel2Script pipeline
-```

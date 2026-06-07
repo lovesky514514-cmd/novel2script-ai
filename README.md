@@ -1,151 +1,147 @@
 # Novel2Script AI
 
-Novel2Script AI 是一个面向小说文本改编的 AI 工具原型，用于将小说章节转换为结构化分场剧本。
+AI 小说转剧本工具。  
+线上演示：<https://n2s.cc.cd>
 
-本项目不是单纯聊天页面，而是围绕“小说上传 → 章节事实抽取 → 分场剧本生成 → 质量校验 → 错误知识库沉淀 → 结构化导出”的完整工作流实现。
+Demo 视频链接：<https://screenapp.io/app/v/tFuaRGdWuX>
 
-## 核心功能
+Demo 视频B站链接:<https://b23.tv/cKD1XyZ>
 
-- 小说文本文件上传；
-- 用户补充改编要求；
-- 章节解析与基础事实抽取；
-- `story_bible` / `chapter_facts` 生成；
-- 分场剧本预览；
-- YAML / TXT 导出；
-- 右侧继续修改；
-- 生成中进度页与阶段提示；
-- `validation_report` / `quality_report` 质量报告；
-- `model_trace` 模型链路追踪；
-- `repair_questions` 修复问题记录；
-- `error_patterns.yaml` 错误知识库；
-- 一键启动前后端。
+## 1. 项目简介
 
-## 技术架构
+Novel2Script AI 面向小说作者和短剧创作者，支持将 3 个章节以上的小说文本自动转换为结构化剧本初稿。
 
-### 前端
+核心能力：
 
-- React
-- Vite
-- CSS 动效
-- 文件上传
-- 生成进度页
-- 分场剧本预览
-- YAML / TXT 下载
-- 继续修改输入框
+- 上传 TXT / MD 小说文本；
+- 自动拆分章节和场景；
+- 输出可编辑的分场剧本；
+- 支持 YAML / TXT 导出；
+- 支持生成后继续修改；
+- 支持用户反馈记录；
+- 针对短信、录音、信件、纸条等非现场文本做对白来源保护。
 
-### 后端
-
-- FastAPI
-- Pydantic
-- PyYAML
-- DeepSeek API
-- 异步任务管理
-- chapter_facts 事实绑定
-- YAML 结构化输出
-- validation_report / quality_report
-- error_patterns.yaml 错误知识库
-
-## 本地运行
-
-1. 进入项目根目录。
-2. 打开 `backend/.env`。
-3. 填写 DeepSeek API Key。
-4. 双击：
+## 2. 在线体验
 
 ```text
-start_one_click.bat
+https://n2s.cc.cd
 ```
 
-启动后会自动启动：
+## 3. Demo 样例
+
+本仓库提供一组演示样例：
+
+```text
+docs/demo_samples/
+├── 雨夜的信_source.txt
+├── 雨夜的信_final_generated.txt
+└── 雨夜的信_final_generated.yaml
+```
+
+示例小说《雨夜的信》包含 3 个章节，覆盖：
+
+- 雨夜旧楼；
+- 匿名短信；
+- 顾言重逢；
+- 钥匙；
+- 西港17号仓库；
+- 父亲录音；
+- 项目经理反转。
+
+最终生成结果中：
+
+- 短信内容会标记为 `短信内容`；
+- 录音内容会标记为 `父亲录音`；
+- 公司会议室场景不会混入旧楼动作；
+- 林夏家翻找钥匙场景不会混入仓库内容；
+- 项目经理台词归属正确。
+
+## 4. YAML Schema
+
+比赛要求的剧本 YAML Schema 文档：
 
 ```text
 FastAPI 后端：http://127.0.0.1:8000
 React 前端：http://127.0.0.1:5173
 ```
 
-## API Key 配置
+该文档说明了：
 
-在 `backend/.env` 中填写：
+- YAML 顶层结构；
+- 场景字段设计；
+- 人物、地点、道具、对白和校验字段；
+- 为什么要区分人物对白和短信/录音/信件等非现场来源。
 
-```text
-AI_PROVIDER=deepseek
-AI_API_KEY=你的 DeepSeek Key
-AI_BASE_URL=https://api.deepseek.com/v1
-AI_CHAT_MODEL=deepseek-chat
-AI_PRO_MODEL=deepseek-reasoner
-```
-
-
-## 目录结构
+## 5. 核心目录
 
 ```text
 backend/
   app/
-    api/
-    core/
-    knowledge/
-    models/
     services/
-  tests/
+      final_result_guard.py
+      character_guard.py
 
 frontend/
-  public/
-  src/
 
 docs/
-  dev_log.md
-  logging_privacy.md
-  reuse_statement.md
-  submission_checklist.md
   yaml_schema.md
-
-run_app.py
-start_one_click.bat
-README.md
+  demo_samples/
+  patches/
+  submission/
 ```
 
-## 错误知识库
+## 6. 后端质量守卫
 
-错误知识库文件：
+最终版本重点优化：
 
 ```text
-backend/app/knowledge/error_patterns.yaml
+backend/app/services/final_result_guard.py
+backend/app/services/character_guard.py
 ```
 
-当前用于沉淀常见生成问题，例如：
+解决的问题：
 
-- 日期中的“日”被误判为场景时间；
-- 短信/录音人物被误判为现场人物；
-- 地点词被误判为道具；
-- 不同章节道具串场；
-- 多地点章节需要拆场；
-- 旧修复日志干扰最终判断。
+- 防止不同地点之间动作串场；
+- 防止会议室混入旧楼动作；
+- 防止林夏家翻找钥匙场景混入仓库内容；
+- 防止短信内容被错误归给人物；
+- 防止父亲录音被错误归给林夏或顾言；
+- 保留项目经理反转台词归属。
 
-## 日志与隐私说明
+最终质量守卫补丁位于：
 
-本项目提供本地运行追踪能力，用于排查模型调用、章节事实抽取、生成校验和错误修复过程。
+```text
+docs/patches/08_backend_quality_guard_final_patch/
+```
 
-公开仓库不包含：
+## 7. 本地运行
 
-- 真实 API Key；
-- 用户上传的小说原文；
-- 真实运行日志；
-- 真实模型响应全文；
-- `debug_runs` 调试目录。
+后端：
 
-系统保留的追踪字段包括：
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn main:app --host 127.0.0.1 --port 8000
+```
 
-- `model_trace`
-- `chapter_facts`
-- `repair_questions`
-- `validation_report`
-- `quality_report`
-- `error_patterns.yaml`
+Windows PowerShell 可使用：
 
-这些字段用于解释生成过程和改进错误知识库，不用于公开保存用户隐私文本。
+```powershell
+cd backend
+.\.venv\Scripts\activate
+python -m uvicorn main:app --host 127.0.0.1 --port 8000
+```
 
-## 比赛提交说明
+前端：
 
-本项目使用 DeepSeek API 作为大模型能力来源，前后端、流程编排、事实绑定、错误知识库、校验报告和导出结构均围绕本项目重新实现。
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-项目不内置未授权小说、影视剧本或课程内容。演示时建议使用自写样例文本或已授权文本。
+## 8. 环境变量
+
+请参考 `.env.example` 或自行创建后端 `.env`。  

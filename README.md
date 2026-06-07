@@ -6,14 +6,12 @@ Novel2Script AI 是一个面向小说作者的 AI 辅助剧本改编工具。项
 
 可访问网站:
 
-text
 ```
 https://n2s.cc.cd
 ```
 
 上线补丁文件:
 
-text
 ```
 docs/patches/
 ├─ 01_user_feedback_online_patch

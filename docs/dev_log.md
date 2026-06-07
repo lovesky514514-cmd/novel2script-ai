@@ -38,15 +38,3 @@
 | PR 1 | 初始化项目说明、Schema 文档与合规说明 | 已完成 |
 | PR 2 | 初始化 FastAPI 后端与基础接口 | 已完成 |
 | PR 3 | 集成前后端小说转剧本工作流 | 待提交 |
-
-## 当前分支建议
-
-```text
-feature/day2-fullstack-polish
-```
-
-## 提交信息建议
-
-```text
-Day 2: integrate fullstack Novel2Script pipeline
-```

@@ -1,0 +1,857 @@
+metadata:
+  title: 雨夜的信
+  source_chapters: 3
+  adaptation_style: 悬疑剧/电影
+  genre: 悬疑/都市情感
+  language: zh-CN
+  created_by: Novel2Script AI
+  app_version: day2_fullstack_polish
+  run_id: 972a70339446
+  generated_at: '2026-06-07T07:24:00+00:00'
+  input_hash: 4c6be7cc6006e6a4
+  model_status: chat=deepseek-chat; pro=deepseek-reasoner
+  guard_mode: day2_fullstack_polish
+  output_gate: enabled
+accuracy_pipeline:
+  story_bible:
+    genre: 悬疑/情感
+    logline: 三年前父亲失踪，一封雨夜的信将林夏引回旧楼，与隐瞒真相的前男友顾言重逢，两人被神秘短信牵引至旧仓库，发现父亲留下的录音，揭开一场围绕监控录像的骗局。
+    characters:
+    - name: 林夏
+      role: 女主角
+      motivation: 查清父亲失踪与三年前事件的真相
+      state: 参与当前改编主线，发现父亲录音和项目经理是幕后操纵者
+    - name: 顾言
+      role: 男主角
+      motivation: 保护林夏，同时面对自己曾经的隐瞒
+      state: 参与当前改编主线，与林夏对峙后透露部分真相
+    - name: 林建平
+      role: 林夏父亲，线索人物
+      motivation: 通过录音和物证保护林夏
+      state: 已失踪，通过录音揭示顾言是受其委托隐瞒
+    - name: 项目经理
+      role: 关键反转人物，幕后黑手
+      motivation: 掩盖三年前的关键证据
+      state: 在仓库现身，手握钥匙，已暴露
+    relationships:
+    - source: 林夏
+      target: 顾言
+      relation: 旧恋人，因父亲失踪和顾言隐瞒而分手，重逢后彼此怀疑
+    - source: 林夏
+      target: 林建平
+      relation: 父女关系，林建平通过录音揭示真相
+    - source: 顾言
+      target: 林建平
+      relation: 林建平委托顾言隐瞒真相，保护林夏
+    - source: 项目经理
+      target: 林建平
+      relation: 曾经信任的人，实际上偷走监控录像，是幕后黑手
+    timeline:
+    - 第一章：雨夜，林夏收到匿名短信回到旧楼，发现放在门口的信封内含一张照片（顾言与黑衣人在仓库门口，日期为父亲出事日）。顾言出现，声称也收到短信。
+    - 第二章：次日林夏在公司见到新来的技术顾问顾言。顾言告知父亲失踪前在查旧仓库监控录像，并展示自己收到的短信。林夏收到新短信要求午夜带钥匙去旧仓库。
+    - 第三章：林夏在家中旧书中找到父亲留下的钥匙（西港17号）。午夜赶往西港仓库，顾言已到。用钥匙打开仓库，找到保险箱，内有旧手机、录音笔和纸条。录音中父亲说顾言是受他委托隐瞒，并暗示身边有内鬼。项目经理现身，手握另一把钥匙，承认是幕后操纵者。
+    foreshadows:
+    - prop: 信封及照片
+      first_seen: 第一章，林夏在旧楼门口发现牛皮纸信封，内含顾言与黑衣人的照片
+      payoff: 照片日期指向父亲出事日，成为调查关键线索
+    - prop: 钥匙（西港17号）
+      first_seen: 第一章提及林夏三年前扔掉钥匙，第三章在家中旧书中找到
+      payoff: 打开西港仓库，找到父亲留下的保险箱
+    - prop: 匿名短信
+      first_seen: 第一章林夏收到第一条短信，第二章顾言展示收到类似短信
+      payoff: 逐步引导林夏和顾言回到旧楼、仓库，推动剧情
+    - prop: 录音笔
+      first_seen: 第三章保险箱中发现
+      payoff: 揭示父亲失踪真相和顾言隐瞒的原因
+    - prop: 旧手机
+      first_seen: 第三章保险箱中发现
+      payoff: 可能存储更多证据，待后续使用
+    - prop: 仓库监控录像
+      first_seen: 第二章顾言提到父亲在查旧仓库监控
+      payoff: 核心证据，被项目经理偷走，是悬念中心
+    global_rules:
+    - 保留信、照片、钥匙、录音等关键道具的伏笔和揭示节奏
+    - 保持人物之间隐瞒与误会的关系张力，避免过早释疑
+    - 三年前真相需在后续章节逐步揭开，每章至少释放一个新线索
+  chapter_facts:
+  - chapter_id: chapter_001
+    source_chapter: 1
+    chapter_title: 第一章 雨夜的信
+    scene_title: 雨夜旧楼重逢
+    location: 旧楼楼道及三楼门口
+    time: 夜
+    on_stage_characters:
+    - 林夏
+    - 顾言
+    off_stage_characters:
+    - 林建平（父亲）
+    - 不明身份的黑衣人（照片中）
+    key_events:
+    - 林夏收到匿名短信，要求今晚十点回旧楼
+    - 林夏冒雨回到旧楼
+    - 在三楼门口发现牛皮纸信封，内有一张照片
+    - 照片显示顾言与一个穿黑色雨衣的人站在仓库门口，背面日期为三年前的六月十七日
+    - 信封上写着'别再相信顾言'
+    - 顾言出现，声称自己同样收到了短信，并否认信封是他放的
+    - 林夏质问顾言为何会来，顾言沉默后回答也收到了短信
+    key_props:
+    - 匿名短信（手机）
+    - 牛皮纸信封
+    - 照片
+    conflict: 林夏怀疑顾言与父亲失踪有关，但顾言否认，双方信任破裂，真相不明。
+    purpose: 引入核心悬念（父亲失踪的线索照片），制造林夏与顾言之间的紧张关系，奠定悬疑基调。
+    must_include:
+    - 照片日期为三年前的六月十七日（父亲出事日）
+    - 信封上的字'别再相信顾言'
+    - 顾言声称也收到短信并否认放信
+    must_not:
+    - 不能提及项目经理
+    - 不能泄露录音笔、保险箱等后续道具信息
+    - 不能明确说顾言说谎或隐瞒
+    scene_units:
+    - title: 旧楼门口及楼道
+      location: 旧楼楼下至三楼门口
+      time: 夜
+      characters:
+      - 林夏
+      - 顾言
+      events:
+      - 林夏回旧楼，发现信封和照片，顾言出现
+      props:
+      - 信封
+      - 照片
+      - 手机（短信）
+      conflict: 林夏对顾言产生怀疑，顾言试图解释但缺乏证据。
+      purpose: 展示关键线索，冲突初现
+    evidence: "林夏回到旧楼时，雨已经下了整整一夜。\r\n\r\n这栋楼快拆了，楼道里的感应灯坏了很久，墙皮被潮气泡得发软，风一吹，门缝里就传出细小的呜咽声。她原本不该回来。三年前离开这里以后，她把钥匙扔进了江里，把顾言的号码拉黑，也把那场没有解释的告别当成一场失败的梦。\r\
+      \n\r\n可今天下午，她收到一条陌生短信。\r\n\r\n“如果你还想知道三年前的真相，今晚十点，回旧楼。”\r\n\r\n短信没有署名。\r\n\r\
+      \n林夏站在楼下，雨水顺着伞骨往下滴。她抬头看向三楼，那里曾经是她和顾言一起租过的小屋。窗户黑着，像一只闭上的眼睛。\r\n\r\n她上楼时，楼道里只有自己的脚步声。\r\
+      \n\r\n三楼门口，地上放着一个牛皮纸信封。信封被塑料袋包着，没有淋湿，上面只写了一行字：\r\n\r\n别再相信顾言。\r\n\r\n林夏的手僵住。\r\
+      \n\r\n她蹲下去，把信封拿起来。里面只有一张照片。\r\n\r\n照片里，顾言站在仓库门口，身旁是一个穿黑色雨衣的人。那个人低着头，看不清脸。照片背面写着日期——三年前的六月十七日。\r\
+      \n\r\n正是她父亲出事的那一天。\r\n\r\n林夏呼吸一滞，指尖发冷。\r\n\r\n三年前，她父亲突然失踪，留下欠债、空房和一堆无人解释的疑点。顾言说他什么都不知道，可第二天"
+  - chapter_id: chapter_002
+    source_chapter: 2
+    chapter_title: 第二章 重逢
+    scene_title: 重逢
+    location: 公司会议室及走廊
+    time: 上午
+    on_stage_characters:
+    - 林夏
+    - 顾言
+    - 项目经理
+    off_stage_characters:
+    - 林建平
+    - 发信人
+    key_events:
+    - 项目经理介绍顾言为新任技术顾问
+    - 林夏与顾言在走廊对峙，林夏质问三年前的隐瞒
+    - 顾言展示自己收到的匿名短信
+    - 顾言透露林建平失踪前在查旧仓库监控录像，六月十七日晚上他与林建平都在仓库
+    - 林夏收到新匿名短信，要求今晚十二点带钥匙去旧仓库
+    key_props:
+    - 信封及照片（顾言要查看）
+    - 顾言的手机（短信截图）
+    - 林夏的手机（新短信）
+    conflict: 林夏因顾言三年前的隐瞒而愤怒和不信任，顾言试图解释却无法充分说明，双方对峙
+    purpose: 揭示顾言也被神秘短信引回，引出监控录像线索，制造关于钥匙的新悬念
+    must_include:
+    - 顾言收到的短信内容：'她已经回去了。你再不出现，就来不及了。'
+    - 林建平在查旧仓库监控录像
+    - 六月十七日晚上顾言和林建平都去过仓库
+    - 林夏收到新短信：'想知道他隐瞒了什么，今晚十二点，旧仓库。带上钥匙。'
+    must_not:
+    - 不能泄露项目经理是幕后黑手
+    - 不能泄露林夏实际上有钥匙（在西港17号旧书中）
+    - 不能泄露录音笔内容
+    scene_units:
+    - title: 重逢
+      location: 公司会议室及走廊
+      time: 上午
+      characters:
+      - 林夏
+      - 顾言
+      - 项目经理
+      events:
+      - 项目经理介绍顾言为新任技术顾问
+      - 林夏与顾言在走廊对峙，林夏质问三年前的隐瞒
+      - 顾言展示自己收到的匿名短信
+      - 顾言透露林建平失踪前在查旧仓库监控录像，六月十七日晚上他与林建平都在仓库
+      - 林夏收到新匿名短信，要求今晚十二点带钥匙去旧仓库
+      props:
+      - 信封及照片
+      - 顾言的手机
+      - 林夏的手机
+      conflict: 林夏因顾言三年前的隐瞒而愤怒，顾言试图解释却无法充分说明
+      purpose: 揭示顾言也被神秘短信引回，引出监控录像线索，制造关于钥匙的新悬念
+    evidence: 文本中顾言展示短信截图、提及父亲查监控录像、六月十七日晚上、林夏收到新短信等
+  - chapter_id: chapter_003
+    source_chapter: 3
+    chapter_title: 第三章 钥匙
+    scene_title: 翻找钥匙与仓库对峙
+    location:
+    - 林夏家中
+    - 西港17号仓库
+    time: 深夜
+    on_stage_characters:
+    - 林夏
+    - 顾言
+    - 项目经理
+    off_stage_characters:
+    - 林建平
+    key_events:
+    - 林夏在家中旧书中找到钥匙
+    - 林夏深夜前往西港17号仓库，顾言已在
+    - 用钥匙打开仓库铁门
+    - 发现父亲留下的保险箱，内有旧手机、录音笔和纸条
+    - 播放录音，父亲说顾言是受其委托隐瞒真相，并暗示身边有内鬼
+    - 项目经理现身，手握另一把钥匙
+    key_props:
+    - 钥匙（蓝色塑料牌，刻字“西港17号”）
+    - 旧书
+    - 保险箱
+    - 录音笔
+    - 旧手机
+    - 纸条
+    conflict: 林夏发现父亲录音揭示顾言隐瞒是受父亲所托，同时项目经理现身，暗示三年前监控被偷的真相
+    purpose: 揭示父亲失踪的部分真相，将矛头指向项目经理，建立新的悬念
+    must_include:
+    - 钥匙来自林夏家中旧书
+    - 钥匙牌标注西港17号
+    - 仓库保险箱内有旧手机、录音笔和纸条
+    - 录音中父亲说顾言是受其委托
+    - 项目经理出现，手握另一把钥匙
+    must_not:
+    - 不能泄露项目经理的动机或具体身份（如是否直接参与偷监控）
+    - 不能提前披露旧手机或纸条的具体内容
+    scene_units:
+    - title: 翻找钥匙
+      location: 林夏家中
+      time: 深夜
+      characters:
+      - 林夏
+      events:
+      - 林夏翻找抽屉，找到父亲留下的工作证、合照等，最后在一本旧书中找到一把钥匙
+      props:
+      - 旧票据
+      - 坏掉的录音笔
+      - 工作证
+      - 合照
+      - 旧书
+      - 钥匙（蓝色塑料牌）
+      conflict: 林夏回忆三年前与顾言最后一次见面的场景，内心对顾言的怀疑加深
+      purpose: 引入关键道具钥匙，为前往仓库铺垫
+    - title: 仓库对峙
+      location: 西港17号仓库
+      time: 深夜
+      characters:
+      - 林夏
+      - 顾言
+      - 项目经理
+      events:
+      - 林夏到达仓库，顾言已等候，说‘你不该来’
+      - 林夏展示钥匙，顾言称这不是父亲的钥匙
+      - 用钥匙打开铁门，发现保险箱，内有旧手机、录音笔和纸条
+      - 播放录音，父亲说顾言是受其委托隐瞒，身边有内鬼
+      - 项目经理出现，手握另一把钥匙，说‘录音还是被你们找到了’
+      props:
+      - 钥匙
+      - 手机（照明）
+      - 保险箱
+      - 录音笔
+      - 旧手机
+      - 纸条
+      - 项目经理的钥匙
+      conflict: 林夏得知父亲让顾言隐瞒真相，而项目经理现身证实是幕后操纵者
+      purpose: 揭示关键线索：父亲身边有内鬼，项目经理是幕后黑手，推动剧情高潮
+    evidence: 原文文本：林夏翻抽屉找到钥匙、前往仓库、打开保险箱、播放录音、项目经理出现。
+  repair_questions:
+  - '-'
+  model_trace:
+    pipeline: pro_learn -> pro_extract_facts -> chat_generate_scene -> deterministic_validate
+      -> pro_repair
+    chat_model: deepseek-chat
+    pro_model: deepseek-reasoner
+    provider: deepseek
+    scene_steps:
+    - chapter: 1
+      initial_issue_count: 0
+      initial_issues:
+      - '-'
+      used_repair: false
+      used_fallback: false
+    - chapter: 2
+      initial_issue_count: 0
+      initial_issues:
+      - '-'
+      used_repair: false
+      used_fallback: false
+    - chapter: 3
+      initial_issue_count: 0
+      initial_issues:
+      - '-'
+      used_repair: false
+      used_fallback: false
+analysis:
+  genre: 悬疑/都市情感
+  adaptation_direction: 悬疑剧/电影
+  logline: 三年前父亲失踪的真相，被一封匿名信重新揭开，林夏与消失的恋人顾言重逢，却发现彼此都是局中人。
+  core_conflict: 林夏与顾言在追寻父亲失踪真相的过程中，被幕后黑手利用彼此的不信任，最终发现真正的背叛者就在身边。
+  tone: 悬疑、压抑、情感纠葛
+  main_characters:
+  - 林夏
+  - 顾言
+  - 林建平
+  - 项目经理
+  key_props:
+  - 信封
+  - 照片
+  - 钥匙
+  - 短信
+  - 仓库
+  - 录音笔
+  - 旧手机
+  must_preserve:
+  - 信封上的字“别再相信顾言”
+  - 照片中顾言与黑衣人在仓库门口
+  - 钥匙及蓝色塑料牌“西港17号”
+  - 短信内容及发送时间
+  - 仓库场景及保险箱
+  - 录音笔中林建平的录音
+  - 三年前的时间线
+  avoid:
+  - 避免将顾言塑造成纯粹的反派
+  - 避免过早揭示项目经理的身份
+  - 避免削弱林夏的主动性
+  - 避免忽略短信和钥匙的伏笔
+requirement_plan:
+  raw_instruction: '-'
+  focus_chapters:
+  - '-'
+  focus_keywords:
+  - '-'
+  expand_level: normal
+  max_new_scenes: 0
+  max_expansion_ratio: 1.0
+  style_constraints: {}
+  preserve:
+  - 信封
+  - 照片
+  - 钥匙
+  - 短信
+  - 仓库
+  - 录音笔
+  - 旧手机
+  avoid:
+  - 避免将顾言塑造成纯粹的反派
+  - 避免过早揭示项目经理的身份
+  - 避免削弱林夏的主动性
+  - 避免忽略短信和钥匙的伏笔
+knowledge_trace:
+  warmup:
+    rules_loaded: 37
+    time_rules_loaded: true
+    time_rule_labels:
+    - 日
+    - 夜
+    - 深夜
+    - 晨
+    - 午
+    - 傍晚
+    - '-'
+    category_count:
+      scene: 7
+      character: 3
+      screenwriting_basic: 6
+      web_drama: 4
+      adaptation: 16
+      dialogue: 6
+      multi_agent_review: 3
+      director: 2
+    index_ready: true
+    seed_queries:
+    - 中文短剧 单场戏 目标 阻碍 转折
+    - 对白 自然 潜台词 避免解释剧情
+    - 伏笔 保留 回收 反转
+    - 小说 改编 剧本 YAML 结构
+    elapsed_ms: 4
+  retrieval_query:
+  - 悬疑/都市情感
+  - 悬疑剧/电影
+  - 单场戏 目标 阻碍 转折
+  - 对白 自然 潜台词
+  - 伏笔 保留 回收 反转
+  used_rules:
+  - id: scene_002
+    category: scene
+    title: 单场戏有阻碍
+    rule: 场景必须有阻碍目标达成的人、条件、规则或信息差。
+  - id: char_009
+    category: character
+    title: 反派也要有目标
+    rule: 阻碍力量应有自己的逻辑和目标。
+  - id: scene_001
+    category: scene
+    title: 单场戏有目标
+    rule: 场景开始时至少一个人物带着明确目标进入。
+  - id: scene_006
+    category: scene
+    title: 场景不写无功能闲聊
+    rule: 无目标、无阻碍、无变化的对话应删除。
+  - id: screen_basic_008
+    category: screenwriting_basic
+    title: 开端建立处境
+    rule: 开端应快速交代人物处境、目标、压力和问题。
+  - id: web_002
+    category: web_drama
+    title: 前三十秒建立目标阻碍
+    rule: 短剧前段应让观众知道谁遇到麻烦、想要什么、为什么不能马上解决。
+  - id: adapt_002
+    category: adaptation
+    title: 内心独白外化
+    rule: 小说内心独白应转化为动作、道具互动、对白、停顿或场景调度。
+  - id: dialogue_001
+    category: dialogue
+    title: 对白不是解释剧情
+    rule: 对白应推动目标、关系、冲突或信息变化。
+  - id: dialogue_002
+    category: dialogue
+    title: 对白是语言行动
+    rule: 人物说话应服务于试探、威胁、回避、讨好、反击或示弱。
+  - id: dialogue_003
+    category: dialogue
+    title: 潜台词优先
+    rule: 人物嘴上说的内容和真实意图可以不一致。
+  - id: dialogue_009
+    category: dialogue
+    title: 对白后关系要变化
+    rule: 一段对白结束后，人物关系或信息状态应发生变化。
+  - id: dialogue_010
+    category: dialogue
+    title: 读剧检查顺口度
+    rule: 对白应适合朗读，避免书面化长句。
+  applied_rules:
+  - rule_id: scene_002
+    title: 单场戏有阻碍
+    applied_to:
+    - scene_001
+    - scene_002
+    - scene_003
+    effect: 用于约束每场必须有冲突、动作和场尾推进。
+  - rule_id: char_009
+    title: 反派也要有目标
+    applied_to:
+    - scene_001
+    - scene_002
+    - scene_003
+    effect: 用于约束每场必须有冲突、动作和场尾推进。
+  - rule_id: scene_001
+    title: 单场戏有目标
+    applied_to:
+    - scene_001
+    - scene_002
+    - scene_003
+    effect: 用于约束每场必须有冲突、动作和场尾推进。
+  - rule_id: scene_006
+    title: 场景不写无功能闲聊
+    applied_to:
+    - scene_001
+    effect: 作为通用改编规则参与生成。
+  - rule_id: screen_basic_008
+    title: 开端建立处境
+    applied_to:
+    - scene_001
+    effect: 作为通用改编规则参与生成。
+  - rule_id: web_002
+    title: 前三十秒建立目标阻碍
+    applied_to:
+    - scene_001
+    - scene_002
+    - scene_003
+    effect: 用于约束每场必须有冲突、动作和场尾推进。
+  - rule_id: adapt_002
+    title: 内心独白外化
+    applied_to:
+    - scene_001
+    effect: 作为通用改编规则参与生成。
+  - rule_id: dialogue_001
+    title: 对白不是解释剧情
+    applied_to:
+    - scene_001
+    - scene_002
+    - scene_003
+    effect: 用于检查对白是否只解释剧情，并强化潜台词。
+  cold_start_ms: 4
+characters:
+- id: char_001
+  name: 林夏
+  role: 女主角
+  traits:
+  - 执着
+  - 警惕
+  - 追问真相
+  motivation: 查清父亲失踪与三年前事件的真相。
+  first_seen: 林夏回到旧楼时，雨已经下了整整一夜。
+  current_state: 参与当前改编主线
+- id: char_002
+  name: 顾言
+  role: 男主角
+  traits:
+  - 隐忍
+  - 负罪
+  - 掌握部分真相
+  motivation: 保护林夏，同时面对自己曾经的隐瞒。
+  first_seen: 离开这里以后，她把钥匙扔进了江里，把顾言的号码拉黑，也把那场没有解释的告别当
+  current_state: 参与当前改编主线
+- id: char_003
+  name: 林建平
+  role: 线索人物
+  traits:
+  - 留下证据
+  - 推动真相
+  motivation: 通过录音和物证保护林夏。
+  first_seen: "保险箱上贴着一张泛黄的标签：林建平。\r \r 那是她父亲的名字。"
+  current_state: 参与当前改编主线
+- id: char_004
+  name: 项目经理
+  role: 关键反转人物
+  traits:
+  - 表面理性
+  - 隐藏秘密
+  motivation: 掩盖三年前的关键证据。
+  first_seen: "对面时，所有人的声音都远了。\r \r 项目经理正在介绍新来的技术顾问。\r \r “这"
+  current_state: 参与当前改编主线
+memory:
+  timeline:
+  - event_001
+  - event_002
+  - event_003
+  foreshadows:
+  - id: foreshadow_001
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“信封”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_002
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“照片”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_003
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“钥匙”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_004
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“短信”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_005
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“仓库”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 5
+  - id: foreshadow_006
+    chapter_id: chapter_001
+    description: 第一章 雨夜的信 出现“三年前”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_007
+    chapter_id: chapter_002
+    description: 第二章 重逢 出现“照片”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_008
+    chapter_id: chapter_002
+    description: 第二章 重逢 出现“钥匙”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_009
+    chapter_id: chapter_002
+    description: 第二章 重逢 出现“短信”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_010
+    chapter_id: chapter_002
+    description: 第二章 重逢 出现“仓库”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 5
+  - id: foreshadow_011
+    chapter_id: chapter_002
+    description: 第二章 重逢 出现“三年前”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_012
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“照片”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_013
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“钥匙”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_014
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“录音笔”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 5
+  - id: foreshadow_015
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“录音”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_016
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“旧手机”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_017
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“短信”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_018
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“仓库”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 5
+  - id: foreshadow_019
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“西港 17 号”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  - id: foreshadow_020
+    chapter_id: chapter_003
+    description: 第三章 钥匙 出现“三年前”，改编时需要保留并在后续回应。
+    status: unresolved
+    importance: 4
+  unresolved_conflicts:
+  - id: event_001
+    chapter_id: chapter_001
+    summary: 第一章 雨夜的信：林夏回到旧楼时，雨已经下了整整一夜。，这栋楼快拆了，楼道里的感应灯坏了很久，墙皮被潮气泡得发软，风一吹，门缝里就传出细小的呜咽声。她原本不该回来。三年前离开这里以后，她把钥匙扔进了江里，把顾言的号码拉黑，也把那场没有解释的告别当成一场失败的
+    characters:
+    - 林夏
+    - 顾言
+    - 林建平
+    location: 旧楼
+    conflict: 围绕“失踪”展开信息冲突。
+    consequence: 推动下一场信息揭露或关系变化。
+  - id: event_002
+    chapter_id: chapter_002
+    summary: 第二章 重逢：第二天上午，林夏在公司会议室再次见到了顾言。，她原本以为昨晚只是意外。可当她推开会议室的门，看见顾言坐在对面时，所有人的声音都远了。，项目经理正在介绍新来的技术顾问。，“这位是顾言，之后会协助我们做影像资料修复。”，顾言抬头，目光和林夏撞上
+    characters:
+    - 林夏
+    - 顾言
+    - 林建平
+    - 项目经理
+    location: 旧楼
+    conflict: 围绕“失踪”展开信息冲突。
+    consequence: 推动下一场信息揭露或关系变化。
+  - id: event_003
+    chapter_id: chapter_003
+    summary: 第三章 钥匙：深夜，林夏把家里的抽屉全翻了一遍。，旧票据、坏掉的录音笔、父亲留下的工作证、几张已经褪色的合照。她以为这些东西早就被自己扔干净了，可它们仍然藏在抽屉深处，像从未真正离开。，最后，她在一本旧书里找到了一把钥匙。，钥匙很小，边缘有锈迹，钥匙圈上
+    characters:
+    - 林夏
+    - 顾言
+    - 林建平
+    - 项目经理
+    location: 西港
+    conflict: 围绕“失踪”展开信息冲突。
+    consequence: 推动下一场信息揭露或关系变化。
+scenes:
+- id: scene_001
+  title: 雨夜旧楼重逢 1
+  source_chapter: 1
+  source_events:
+  - event_001
+  location: 旧楼楼道
+  time: 夜
+  characters:
+  - 林夏
+  - 顾言
+  conflict: 林夏怀疑顾言与父亲失踪有关，但顾言否认，双方信任破裂，真相不明。
+  purpose: 引入核心悬念（父亲失踪的线索照片），制造林夏与顾言之间的紧张关系，奠定悬疑基调。
+  action:
+  - 林夏收到匿名短信，要求今晚十点回旧楼
+  - 本场重点保留道具：匿名短信、牛皮纸信封、照片。
+  dialogue:
+  - speaker: 顾言
+    line: 那封信不是我放的。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 那你为什么会来？
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 短信内容
+    line: 如果你还想知道三年前的真相，今晚十点，回旧楼。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  notes: 根据对应章节事实生成。
+- id: scene_002
+  title: 雨夜旧楼重逢 2
+  source_chapter: 1
+  source_events:
+  - event_001
+  location: 三楼门口
+  time: 夜
+  characters:
+  - 林夏
+  - 顾言
+  conflict: 林夏怀疑顾言与父亲失踪有关，但顾言否认，双方信任破裂，真相不明。
+  purpose: 将“雨夜旧楼重逢 2”中的关键事件转化为独立场景，并推动后续剧情。
+  action:
+  - 林夏冒雨回到旧楼
+  - 本场重点保留道具：匿名短信、牛皮纸信封、照片。
+  dialogue:
+  - speaker: 顾言
+    line: 那封信不是我放的。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  notes: 根据对应章节事实生成。
+- id: scene_003
+  title: 重逢 1
+  source_chapter: 2
+  source_events:
+  - event_002
+  location: 公司会议室
+  time: 上午
+  characters:
+  - 林夏
+  - 顾言
+  - 项目经理
+  conflict: 林夏因顾言三年前的隐瞒而愤怒和不信任，顾言试图解释却无法充分说明，双方对峙
+  purpose: 揭示顾言也被神秘短信引回，引出监控录像线索，制造关于钥匙的新悬念
+  action:
+  - 项目经理介绍顾言为新任技术顾问
+  - 本场重点保留道具：信封及照片、顾言的手机、林夏的手机。
+  dialogue:
+  - speaker: 项目经理
+    line: 这位是顾言，之后会协助我们做影像资料修复。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 顾言
+    line: 林夏，我们谈谈。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 工作时间，不谈私事。
+    emotion: 追问
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 三年前我也需要一个解释，你给了吗？
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  notes: 根据对应章节事实生成。
+- id: scene_004
+  title: 重逢 2
+  source_chapter: 2
+  source_events:
+  - event_002
+  location: 走廊
+  time: 上午
+  characters:
+  - 林夏
+  - 顾言
+  - 项目经理
+  conflict: 林夏因顾言三年前的隐瞒而愤怒和不信任，顾言试图解释却无法充分说明，双方对峙
+  purpose: 将“重逢 2”中的关键事件转化为独立场景，并推动后续剧情。
+  action:
+  - 林夏与顾言在走廊对峙，林夏质问三年前的隐瞒
+  - 本场重点保留道具：信封及照片、顾言的手机、林夏的手机。
+  dialogue:
+  - speaker: 顾言
+    line: 林夏，我们谈谈。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 工作时间，不谈私事。
+    emotion: 追问
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 那封信和照片，我需要看。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 林夏
+    line: 你需要？
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  notes: 根据对应章节事实生成。
+- id: scene_005
+  title: 翻找钥匙
+  source_chapter: 3
+  source_events:
+  - event_003
+  location: 林夏家中
+  time: 深夜
+  characters:
+  - 林夏
+  conflict: 林夏回忆三年前与顾言最后一次见面的场景，内心对顾言的怀疑加深
+  purpose: 引入关键道具钥匙，为前往仓库铺垫
+  action:
+  - 林夏翻找抽屉，找到父亲留下的工作证、合照等，最后在一本旧书中找到一把钥匙
+  - 本场重点保留道具：旧票据、坏掉的录音笔、工作证、合照、旧书、钥匙。
+  dialogue:
+  - speaker: 林夏
+    line: 这把钥匙不该还在这里。
+    emotion: 紧张
+    subtext: 林夏翻找抽屉，找到父亲留下的工作证、合照等，最后在一本旧
+  notes: 根据对应章节事实生成。
+- id: scene_006
+  title: 仓库对峙
+  source_chapter: 3
+  source_events:
+  - event_003
+  location: 西港17号仓库
+  time: 深夜
+  characters:
+  - 林夏
+  - 顾言
+  - 项目经理
+  conflict: 林夏得知父亲让顾言隐瞒真相，而项目经理现身证实是幕后操纵者
+  purpose: 揭示关键线索：父亲身边有内鬼，项目经理是幕后黑手，推动剧情高潮
+  action:
+  - 林夏到达仓库，顾言已等候，说‘你不该来’
+  - 林夏展示钥匙，顾言称这不是父亲的钥匙
+  - 用钥匙打开铁门，发现保险箱，内有旧手机、录音笔和纸条
+  - 本场重点保留道具：钥匙、手机、保险箱、录音笔、旧手机、纸条、项目经理的钥匙。
+  dialogue:
+  - speaker: 项目经理
+    line: 录音还是被你们找到了。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  - speaker: 父亲录音
+    line: 林夏，如果你听到这段录音，说明我可能已经回不去了。不要相信照片，也不要只相信顾言。他确实骗了你，但他骗你，是因为我让他这么做。
+    emotion: 克制
+    subtext: 根据原文上下文归属对白。
+  notes: 根据对应章节事实生成。
+quality_report:
+  event_coverage: 1.0
+  character_consistency: 1.0
+  foreshadow_retention: 1.0
+  format_valid: true
+  warnings:
+  - 'scene_001: purpose disambiguated from chapter_facts.'
+  - 'scene_002: purpose disambiguated from chapter_facts.'
+  - 'scene_003: purpose disambiguated from chapter_facts.'
+  suggestions:
+  - '-'
+validation_report:
+  first_pass_issues:
+  - level: warning
+    code: time_not_from_chapter
+    target: scene_001
+    message: 时间应接近 日，当前为 夜。
+  - level: warning
+    code: time_not_from_chapter
+    target: scene_002
+    message: 时间应接近 日，当前为 上午。
+  repair_log:
+  - 'scene_001: purpose disambiguated from chapter_facts.'
+  - 'scene_002: purpose disambiguated from chapter_facts.'
+  - 'scene_003: purpose disambiguated from chapter_facts.'
+  final_issues:
+  - '-'
+  final_status: pass
+  pass_count: 2

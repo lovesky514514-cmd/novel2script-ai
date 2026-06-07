@@ -1,281 +1,116 @@
-# Novel2Script AI YAML Schema 设计文档
+# YAML Schema
 
-## 1. 设计目标
+Novel2Script AI 的输出包含人类可读剧本预览和结构化 YAML 两部分。YAML 用于记录生成结果、事实来源、模型链路和质量报告。
 
-本项目需要将 3 个章节以上的小说文本自动转换为结构化剧本 YAML。
-
-Schema 的设计目标不是单纯让 AI 输出一份 YAML，而是让剧本具备以下能力：
-
-1. 可读：作者可以直接阅读和修改；
-2. 可编辑：每个角色、场景、对白、动作都能被单独调整；
-3. 可追溯：每个剧本场景都能追溯到原小说章节和事件；
-4. 可校验：程序可以检查字段是否完整、格式是否正确；
-5. 可扩展：后续可以扩展为分镜、短剧、动画、广播剧等格式。
-
-## 2. 顶层结构
-
-YAML 顶层结构如下：
+## 顶层字段
 
 ```yaml
-metadata:
-  title: ""
-  source_chapters: 3
-  adaptation_style: "screenplay"
-  language: "zh-CN"
-  created_by: "Novel2Script AI"
-
-source_summary:
-  global_logline: ""
-  main_conflict: ""
-  theme: ""
-
-characters:
-  - id: "char_001"
-    name: ""
-    role: "protagonist"
-    traits: []
-    motivation: ""
-    relationships: []
-
+title: "作品标题"
+chapter_count: 3
 memory:
+  characters: []
+  settings: []
   timeline: []
-  foreshadows: []
-  unresolved_conflicts: []
-
-scenes:
-  - id: "scene_001"
-    title: ""
-    source_chapter: 1
-    source_events: []
-    location: ""
-    time: ""
-    characters: []
-    conflict: ""
-    purpose: ""
-    action: []
-    dialogue:
-      - speaker: ""
-        line: ""
-        emotion: ""
-        subtext: ""
-    notes: ""
-
-quality_report:
-  event_coverage: 0.0
-  character_consistency: 0.0
-  format_valid: true
-  warnings: []
+scenes: []
+analysis: {}
+story_bible: {}
+chapter_facts: []
+model_trace: {}
+repair_questions: []
+validation_report: {}
+quality_report: {}
 ```
 
-## 3. 字段说明
-
-### 3.1 metadata
-
-```yaml
-metadata:
-  title: ""
-  source_chapters: 3
-  adaptation_style: "screenplay"
-  language: "zh-CN"
-  created_by: "Novel2Script AI"
-```
-
-设计原因：
-
-* `title`：保存作品标题；
-* `source_chapters`：记录输入小说章节数，符合题目“三个章节以上”的要求；
-* `adaptation_style`：标记改编风格，例如影视剧本、短剧、广播剧；
-* `language`：便于后续扩展多语言；
-* `created_by`：标记生成来源。
-
-### 3.2 source_summary
-
-```yaml
-source_summary:
-  global_logline: ""
-  main_conflict: ""
-  theme: ""
-```
-
-设计原因：
-
-小说转剧本时，不能只拆场景，也要保留整体故事方向。
-
-* `global_logline`：一句话概括故事；
-* `main_conflict`：明确主冲突；
-* `theme`：保留作品主题，避免改编跑偏。
-
-### 3.3 characters
-
-```yaml
-characters:
-  - id: "char_001"
-    name: ""
-    role: "protagonist"
-    traits: []
-    motivation: ""
-    relationships: []
-```
-
-设计原因：
-
-长文本改编最容易出现人物遗忘、人物关系混乱和性格漂移。因此角色必须独立成表。
-
-字段说明：
-
-* `id`：角色唯一标识；
-* `name`：角色姓名；
-* `role`：角色类型，例如 protagonist、antagonist、supporting；
-* `traits`：人物性格标签；
-* `motivation`：角色核心动机；
-* `relationships`：与其他角色的关系。
-
-### 3.4 memory
-
-```yaml
-memory:
-  timeline: []
-  foreshadows: []
-  unresolved_conflicts: []
-```
-
-设计原因：
-
-小说转剧本不能只处理当前章节，还要保留长期上下文。
-
-* `timeline`：记录事件顺序；
-* `foreshadows`：记录伏笔；
-* `unresolved_conflicts`：记录尚未解决的矛盾。
-
-这部分相当于剧本改编过程中的上下文记忆，防止 AI 看后面忘前面。
-
-### 3.5 scenes
+## scenes
 
 ```yaml
 scenes:
   - id: "scene_001"
-    title: ""
+    title: "场景标题"
     source_chapter: 1
-    source_events: []
-    location: ""
-    time: ""
-    characters: []
-    conflict: ""
-    purpose: ""
-    action: []
+    location: "地点"
+    time: "时间"
+    characters:
+      - "人物"
+    conflict: "本场冲突"
+    action:
+      - "动作描述"
     dialogue:
-      - speaker: ""
-        line: ""
-        emotion: ""
-        subtext: ""
-    notes: ""
+      - speaker: "人物"
+        line: "对白"
+        emotion: "情绪"
+        subtext: "潜台词"
+    purpose: "场景目的"
 ```
 
-设计原因：
+## chapter_facts
 
-剧本的核心是场景。每个场景必须包含地点、人物、冲突、动作和对白。
-
-字段说明：
-
-* `id`：场景唯一标识；
-* `title`：场景标题；
-* `source_chapter`：来源章节；
-* `source_events`：来源事件 ID；
-* `location`：场景地点；
-* `time`：场景时间；
-* `characters`：出场人物；
-* `conflict`：本场冲突；
-* `purpose`：本场在剧情中的作用；
-* `action`：动作描写；
-* `dialogue`：对白；
-* `notes`：补充说明。
-
-其中 `source_chapter` 和 `source_events` 是准确性控制的关键字段。它们用于证明场景来自原小说，而不是 AI 凭空生成。
-
-### 3.6 dialogue
+`chapter_facts` 是最终输出的事实来源，用于减少串场、地点错误、时间错误和道具污染。
 
 ```yaml
-dialogue:
-  - speaker: ""
-    line: ""
-    emotion: ""
-    subtext: ""
+chapter_facts:
+  - source_chapter: 1
+    scene_title: "建议场景标题"
+    location: "本章主要地点"
+    time: "日/夜/深夜/晨/午/傍晚/-"
+    on_stage_characters: []
+    off_stage_characters: []
+    key_events: []
+    key_props: []
+    conflict: "主要冲突"
+    purpose: "章节功能"
+    scene_units: []
 ```
 
-设计原因：
+## model_trace
 
-小说中的心理描写通常不能直接进入剧本，需要转化为对白、动作和潜台词。
+`model_trace` 用于说明模型调用链路。
 
-字段说明：
+```yaml
+model_trace:
+  provider: "deepseek"
+  chat_model: "deepseek-chat"
+  pro_model: "deepseek-reasoner"
+  pipeline: "pro_learn_chat_generate_pro_validate_repair"
+```
 
-* `speaker`：说话人；
-* `line`：对白内容；
-* `emotion`：说话情绪；
-* `subtext`：潜台词。
+## repair_questions
 
-加入 `emotion` 和 `subtext` 可以让输出更像剧本，而不是简单对话列表。
+`repair_questions` 用于记录修复阶段向模型提出的问题。
 
-### 3.7 quality_report
+```yaml
+repair_questions:
+  - target: "scene_001"
+    question: "地点是否来自当前章节？"
+    reason: "检测到地点不一致"
+```
+
+## validation_report
+
+`validation_report` 用于记录结构校验结果。
+
+```yaml
+validation_report:
+  final_status: "pass"
+  first_pass_issues: []
+  repair_log: []
+  final_issues: []
+```
+
+## quality_report
+
+`quality_report` 用于记录最终输出质量状态。
 
 ```yaml
 quality_report:
-  event_coverage: 0.0
-  character_consistency: 0.0
   format_valid: true
   warnings: []
 ```
 
-设计原因：
+## 说明
 
-AI 生成内容需要可检查。质量报告用于提示用户哪些部分可靠，哪些部分需要人工确认。
-
-字段说明：
-
-* `event_coverage`：关键事件覆盖率；
-* `character_consistency`：角色一致性评分；
-* `format_valid`：YAML 格式是否通过校验；
-* `warnings`：需要人工确认的问题。
-
-## 4. 准确性控制设计
-
-为了减少 AI 幻觉，本项目要求每个场景都必须绑定：
-
-```yaml
-source_chapter: 1
-source_events:
-  - "event_001"
-```
-
-这意味着：
-
-1. 每个场景都能追溯到原小说；
-2. 程序可以检查是否出现无来源场景；
-3. 用户可以知道哪些内容是忠实改编，哪些内容是艺术加工；
-4. 后续可以生成准确性报告。
-
-## 5. 为什么不用纯文本剧本格式
-
-纯文本剧本虽然适合阅读，但不适合程序校验和二次处理。
-
-YAML 的优势是：
-
-* 结构清晰；
-* 可读性比 JSON 更好；
-* 能表达层级关系；
-* 能被程序解析；
-* 适合后续导出 Markdown、Word、分镜表等格式。
-
-## 6. 后续扩展方向
-
-Schema 后续可以扩展：
-
-1. `shots`：分镜信息；
-2. `camera`：镜头语言；
-3. `sound`：音效和背景音乐；
-4. `costume`：服装道具；
-5. `duration`：场景时长；
-6. `platform_style`：短剧、网剧、广播剧等平台风格。
-
-## 7. 当前状态
-
-当前文档为初版 Schema 设计，后续会根据功能开发和测试结果继续调整。
+- `chapter_facts` 是最终输出的事实来源；
+- `validation_report` 用于记录结构校验结果；
+- `quality_report` 用于记录最终输出质量；
+- `model_trace` 用于说明模型调用链路；
+- `repair_questions` 用于记录修复阶段的追问与判断。

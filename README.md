@@ -4,6 +4,22 @@
 
 Novel2Script AI 是一个面向小说作者的 AI 辅助剧本改编工具。项目目标是将 3 个章节以上的小说文本自动转换为结构化剧本 YAML，让作者能够快速获得可编辑、可继续打磨的剧本初稿。
 
+可访问网站:
+
+```
+https://n2s.cc.cd
+```
+
+上线补丁文件:
+
+```
+docs/patches/
+├─ 01_user_feedback_online_patch
+├─ 02_mobile_adaptation_one_click_patch
+├─ 03_wechat_miniprogram_deploy_package
+└─ README.md
+```
+
 本项目不是简单地把小说一次性丢给大模型生成剧本，而是设计为一个多阶段 AI 改编工作流：
 
 ```text
@@ -271,10 +287,10 @@ docs/dev_log.md
 - [x] 初始化复用说明
 - [x] 初始化 PR 模板
 - [x] 搭建后端 FastAPI 骨架
-- [ ] 搭建前端 React 工作台
-- [ ] 实现小说章节切分
-- [ ] 实现事实记忆库
-- [ ] 实现剧本 YAML 生成
-- [ ] 实现 Schema 校验和自动修复
-- [ ] 实现前端可视化预览
+- [x] 搭建前端 React 工作台
+- [x] 实现小说章节切分
+- [x] 实现事实记忆库
+- [x] 实现剧本 YAML 生成
+- [x] 实现 Schema 校验和自动修复
+- [x] 实现前端可视化预览
 - [ ] 补充 Demo 视频

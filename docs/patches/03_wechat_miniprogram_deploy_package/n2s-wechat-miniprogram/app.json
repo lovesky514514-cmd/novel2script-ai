@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "Novel2Script AI",
+    "navigationBarBackgroundColor": "#F6F9FF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F9FF",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

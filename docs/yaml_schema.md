@@ -1,6 +1,6 @@
 # Novel2Script AI 剧本 YAML Schema 说明
 
-## 1. 设计目标
+Novel2Script AI 的输出包含人类可读剧本预览和结构化 YAML 两部分。YAML 用于记录生成结果、事实来源、模型链路和质量报告。
 
 本 Schema 用于把 3 个章节以上的小说文本转换为结构化剧本初稿。设计目标是：
 
@@ -31,6 +31,7 @@ story_bible:
       description: string
   core_conflict: string
 
+```yaml
 scenes:
   - scene_id: integer
     title: string
@@ -60,7 +61,7 @@ exports:
   yaml_available: boolean
 ```
 
-## 3. 字段说明
+## chapter_facts
 
 ### meta
 

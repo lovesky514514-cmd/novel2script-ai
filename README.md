@@ -61,7 +61,8 @@ docs/demo_samples/
 比赛要求的剧本 YAML Schema 文档：
 
 ```text
-docs/yaml_schema.md
+FastAPI 后端：http://127.0.0.1:8000
+React 前端：http://127.0.0.1:5173
 ```
 
 该文档说明了：

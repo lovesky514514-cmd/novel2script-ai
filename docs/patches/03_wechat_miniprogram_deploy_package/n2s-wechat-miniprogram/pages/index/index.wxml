@@ -1,0 +1,20 @@
+<view class="page-shell">
+  <web-view
+    wx:if="{{webUrl}}"
+    src="{{webUrl}}"
+    bindload="onWebLoad"
+    binderror="onWebError"
+  ></web-view>
+
+  <view wx:if="{{loading}}" class="loading-card">
+    <view class="loading-logo">N2S</view>
+    <view class="loading-title">Novel2Script AI</view>
+    <view class="loading-text">正在打开线上工作台...</view>
+  </view>
+
+  <view wx:if="{{loadError}}" class="error-card">
+    <view class="error-title">页面加载失败</view>
+    <view class="error-text">请检查网络，或确认 https://n2s.cc.cd 可以正常访问。</view>
+    <button class="retry-btn" bindtap="retry">重新加载</button>
+  </view>
+</view>

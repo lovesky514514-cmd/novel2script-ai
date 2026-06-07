@@ -1,0 +1,165 @@
+[
+  {
+    "id": "char_001",
+    "category": "character",
+    "title": "人物不是身份标签",
+    "rule": "身份只是设定，人物需要欲望、恐惧、软肋、代价和变化。",
+    "apply_when": [
+      "memory_builder",
+      "script_writer"
+    ],
+    "check_points": [
+      "人物欲望是否明确",
+      "人物恐惧是否明确"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_002",
+    "category": "character",
+    "title": "人物靠选择成立",
+    "rule": "人物性格应通过行动和选择呈现，不靠简介。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有选择",
+      "是否只在介绍人物"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_003",
+    "category": "character",
+    "title": "主角要有外部目标",
+    "rule": "主角必须有当前可执行的外部目标。",
+    "apply_when": [
+      "memory_builder",
+      "script_writer"
+    ],
+    "check_points": [
+      "目标是否具体",
+      "目标是否可行动"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_004",
+    "category": "character",
+    "title": "主角要有内部缺口",
+    "rule": "主角除了外部目标，还要有情感、价值或关系上的缺口。",
+    "apply_when": [
+      "memory_builder"
+    ],
+    "check_points": [
+      "内部缺口是否影响行动"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_005",
+    "category": "character",
+    "title": "人物关系要具体",
+    "rule": "人物关系应包含欠缺、误会、依赖、压迫、秘密或利益。",
+    "apply_when": [
+      "memory_builder",
+      "script_writer"
+    ],
+    "check_points": [
+      "关系是否有压力",
+      "关系是否推动冲突"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_006",
+    "category": "character",
+    "title": "关系最好不平衡",
+    "rule": "同场人物之间可设置地位、信息、情感或利益不平衡。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "谁知道更多",
+      "谁更需要对方"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_007",
+    "category": "character",
+    "title": "重要角色出场带动作",
+    "rule": "重要角色首次出场应通过处理问题的方式体现性格。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "出场是否有动作",
+      "动作是否暴露性格"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_008",
+    "category": "character",
+    "title": "配角要有功能",
+    "rule": "配角应承担信息、冲突、喜剧、情绪辅助或主角映照功能。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "配角功能是否明确"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_009",
+    "category": "character",
+    "title": "反派也要有目标",
+    "rule": "阻碍力量应有自己的逻辑和目标。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "反派是否只是坏",
+      "阻碍是否有逻辑"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "char_010",
+    "category": "character",
+    "title": "人物变化可见",
+    "rule": "人物变化应体现在行动方式、称呼、距离、选择或牺牲上。",
+    "apply_when": [
+      "script_doctor",
+      "report_generator"
+    ],
+    "check_points": [
+      "变化是否可见"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

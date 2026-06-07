@@ -1,0 +1,94 @@
+[
+  {
+    "id": "review_001",
+    "category": "multi_agent_review",
+    "title": "不用一次性生成",
+    "rule": "长文本改编应拆成事实抽取、场景规划、剧本生成、审查和修复。",
+    "apply_when": [
+      "workflow"
+    ],
+    "check_points": [
+      "是否 one-shot"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "review_002",
+    "category": "multi_agent_review",
+    "title": "Reviewer Loop 检查节奏",
+    "rule": "审查节点需检查开场钩子、冲突升级、场尾悬念和节奏密度。",
+    "apply_when": [
+      "report_generator"
+    ],
+    "check_points": [
+      "钩子是否强",
+      "节奏是否拖"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "review_003",
+    "category": "multi_agent_review",
+    "title": "Patch Rewrite 优先",
+    "rule": "修复问题时优先局部修改，不整篇重写。",
+    "apply_when": [
+      "repair_agent"
+    ],
+    "check_points": [
+      "是否局部修复"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "review_004",
+    "category": "multi_agent_review",
+    "title": "Idea Bank 保留被删亮点",
+    "rule": "被删掉但有价值的钩子、反转、人物动作可进入 Idea Bank。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有可恢复亮点"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "review_005",
+    "category": "multi_agent_review",
+    "title": "多视角审查",
+    "rule": "可分别从保真度、剧作性、格式、可拍性审查剧本。",
+    "apply_when": [
+      "report_generator"
+    ],
+    "check_points": [
+      "审查维度是否完整"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "review_006",
+    "category": "multi_agent_review",
+    "title": "质量控制前置",
+    "rule": "格式、逻辑、角色和场景问题应在文本阶段尽早发现。",
+    "apply_when": [
+      "schema_validator",
+      "report_generator"
+    ],
+    "check_points": [
+      "问题是否前置处理"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

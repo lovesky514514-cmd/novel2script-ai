@@ -1,0 +1,95 @@
+version: 1
+name: screenplay_time_format_rules
+description: 中文影视剧本场景时间标记规则
+
+standard_labels:
+  日:
+    meaning: 白天 / 日间
+    use_when:
+      - 上午
+      - 中午前后
+      - 下午
+      - 白天
+      - 工作时间
+      - 没有明确夜晚信息但场景发生在日常工作场景
+    not_meaning: 不是日期，不表示哪一天
+    examples:
+      - 公司会议室 / 走廊｜日
+      - 教室｜日
+  夜:
+    meaning: 夜晚
+    use_when:
+      - 夜
+      - 晚上
+      - 雨夜
+      - 十二点前后
+      - 灯光、黑暗、夜色明显
+    examples:
+      - 旧楼三楼走廊｜夜
+      - 巷口｜夜
+  深夜:
+    meaning: 夜深以后，通常比“夜”更晚
+    use_when:
+      - 深夜
+      - 凌晨
+      - 十二点以后
+      - 夜深人静
+    examples:
+      - 西港十七号仓库｜深夜
+  晨:
+    meaning: 清晨
+    use_when:
+      - 清晨
+      - 天刚亮
+      - 黎明
+  午:
+    meaning: 中午
+    use_when:
+      - 中午
+      - 午后
+  傍晚:
+    meaning: 黄昏 / 日落前后
+    use_when:
+      - 傍晚
+      - 黄昏
+      - 日落
+  "-":
+    meaning: 原文没有足够信息
+    use_when:
+      - 无法判断
+      - 原文未提供时间线索
+
+space_labels:
+  内:
+    meaning: 室内
+    use_when:
+      - 会议室
+      - 走廊
+      - 房间
+      - 仓库内部
+      - 教室
+  外:
+    meaning: 室外
+    use_when:
+      - 楼下
+      - 街道
+      - 门口外
+      - 江边
+      - 仓库外
+  内外:
+    meaning: 室内外转换
+    use_when:
+      - 从门外进入室内
+      - 室内外动作同时存在
+
+output_policy:
+  professional_preview:
+    time: 使用“日 / 夜 / 深夜 / 晨 / 午 / 傍晚 / -”
+    note: “日”表示白天，不表示日期
+  yaml:
+    time: 使用标准标签
+    unknown: "-"
+  avoid:
+    - 白天作为最终剧本时间字段
+    - 哪一天的日期误写进 time
+    - 原文无信息时强行补时间

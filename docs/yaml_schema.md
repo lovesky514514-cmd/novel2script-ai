@@ -1,281 +1,213 @@
-# Novel2Script AI YAML Schema 设计文档
+# Novel2Script AI 剧本 YAML Schema 说明
+
+生成时间：2026-06-07 14:15:36
 
 ## 1. 设计目标
 
-本项目需要将 3 个章节以上的小说文本自动转换为结构化剧本 YAML。
+本 Schema 用于把 3 个章节以上的小说文本转换为结构化剧本初稿。设计目标是：
 
-Schema 的设计目标不是单纯让 AI 输出一份 YAML，而是让剧本具备以下能力：
-
-1. 可读：作者可以直接阅读和修改；
-2. 可编辑：每个角色、场景、对白、动作都能被单独调整；
-3. 可追溯：每个剧本场景都能追溯到原小说章节和事件；
-4. 可校验：程序可以检查字段是否完整、格式是否正确；
-5. 可扩展：后续可以扩展为分镜、短剧、动画、广播剧等格式。
+- 让作者快速看到“小说内容如何被拆成可拍摄场景”；
+- 保留人物、地点、时间、道具、动作、对白和场景目的；
+- 支持后续人工继续修改、导出、分镜或拍摄流程衔接；
+- 让生成结果具备可校验性，减少地点串场、对白归属错误和关键线索丢失。
 
 ## 2. 顶层结构
 
-YAML 顶层结构如下：
-
 ```yaml
-metadata:
-  title: ""
-  source_chapters: 3
-  adaptation_style: "screenplay"
-  language: "zh-CN"
-  created_by: "Novel2Script AI"
+meta:
+  title: string
+  source_type: novel
+  generated_at: string
+  version: string
 
-source_summary:
-  global_logline: ""
-  main_conflict: ""
-  theme: ""
-
-characters:
-  - id: "char_001"
-    name: ""
-    role: "protagonist"
-    traits: []
-    motivation: ""
-    relationships: []
-
-memory:
-  timeline: []
-  foreshadows: []
-  unresolved_conflicts: []
+story_bible:
+  characters:
+    - name: string
+      role: string
+      description: string
+  key_locations:
+    - name: string
+      description: string
+  key_props:
+    - name: string
+      description: string
+  core_conflict: string
 
 scenes:
-  - id: "scene_001"
-    title: ""
-    source_chapter: 1
-    source_events: []
-    location: ""
-    time: ""
-    characters: []
-    conflict: ""
-    purpose: ""
-    action: []
+  - scene_id: integer
+    title: string
+    chapter_ref: string
+    location: string
+    time: string
+    characters:
+      - string
+    conflict: string
+    action:
+      - string
+    props:
+      - string
     dialogue:
-      - speaker: ""
-        line: ""
-        emotion: ""
-        subtext: ""
-    notes: ""
+      - speaker: string
+        line: string
+        emotion: string
+        subtext: string
+    purpose: string
+    validation:
+      status: pass | needs_review
+      warnings:
+        - string
 
-quality_report:
-  event_coverage: 0.0
-  character_consistency: 0.0
-  format_valid: true
-  warnings: []
+exports:
+  txt_available: boolean
+  yaml_available: boolean
 ```
 
 ## 3. 字段说明
 
-### 3.1 metadata
+### meta
+
+记录生成文件的基础信息，便于区分不同小说、不同版本和不同生成时间。
+
+### story_bible
+
+用于保存全局设定，包括人物、地点、道具和核心冲突。  
+设计原因：小说转剧本时最容易出现人物关系混乱和线索丢失，story_bible 可以作为后续场景生成和校验的统一参考。
+
+### scenes
+
+剧本主体。每个 scene 对应一个可编辑、可拍摄的场景单元。
+
+#### scene_id
+
+场景编号，便于作者定位和修改。
+
+#### title
+
+场景标题，用于快速判断本场内容。
+
+#### chapter_ref
+
+原小说章节来源，便于回查原文。
+
+#### location
+
+场景地点。  
+设计原因：地点是防止动作串场的关键字段。例如“公司会议室”不应混入“旧楼楼道”的动作。
+
+#### time
+
+场景时间，如“夜”“上午”“深夜”。  
+设计原因：短剧和影视剧本需要明确时间环境，便于拍摄和剪辑。
+
+#### characters
+
+本场出现人物列表。  
+设计原因：对白说话人必须来自本场人物，或来自短信、录音、信件等非现场来源。
+
+#### conflict
+
+本场核心冲突。  
+设计原因：每场戏都应有目标和阻碍，避免只是复述小说内容。
+
+#### action
+
+可拍摄动作列表。  
+设计原因：小说描写需要转化为镜头和演员动作，action 字段用于承接这一转换。
+
+#### props
+
+本场关键道具。  
+设计原因：悬疑、短剧和改编剧本中，道具经常承担伏笔作用，如短信、信封、照片、钥匙、录音笔等。
+
+#### dialogue
+
+对白列表，每条对白包含：
 
 ```yaml
-metadata:
-  title: ""
-  source_chapters: 3
-  adaptation_style: "screenplay"
-  language: "zh-CN"
-  created_by: "Novel2Script AI"
+speaker: string
+line: string
+emotion: string
+subtext: string
 ```
 
 设计原因：
 
-* `title`：保存作品标题；
-* `source_chapters`：记录输入小说章节数，符合题目“三个章节以上”的要求；
-* `adaptation_style`：标记改编风格，例如影视剧本、短剧、广播剧；
-* `language`：便于后续扩展多语言；
-* `created_by`：标记生成来源。
+- speaker 保证说话人清晰；
+- line 保存台词内容；
+- emotion 帮助演员理解情绪；
+- subtext 保存潜台词或信息来源。
 
-### 3.2 source_summary
-
-```yaml
-source_summary:
-  global_logline: ""
-  main_conflict: ""
-  theme: ""
-```
-
-设计原因：
-
-小说转剧本时，不能只拆场景，也要保留整体故事方向。
-
-* `global_logline`：一句话概括故事；
-* `main_conflict`：明确主冲突；
-* `theme`：保留作品主题，避免改编跑偏。
-
-### 3.3 characters
+对于短信、录音、信件、纸条、屏幕文字等非现场来源，speaker 可写为：
 
 ```yaml
-characters:
-  - id: "char_001"
-    name: ""
-    role: "protagonist"
-    traits: []
-    motivation: ""
-    relationships: []
+短信内容
+父亲录音
+录音声
+信件内容
+纸条内容
+屏幕文字
+旁白
 ```
 
-设计原因：
+这样可以避免把非人物文本错误归给现场角色。
 
-长文本改编最容易出现人物遗忘、人物关系混乱和性格漂移。因此角色必须独立成表。
+#### purpose
 
-字段说明：
+本场作用，如“引出钥匙”“揭示反派”“制造悬念”。  
+设计原因：方便作者判断每场是否有必要保留。
 
-* `id`：角色唯一标识；
-* `name`：角色姓名；
-* `role`：角色类型，例如 protagonist、antagonist、supporting；
-* `traits`：人物性格标签；
-* `motivation`：角色核心动机；
-* `relationships`：与其他角色的关系。
+#### validation
 
-### 3.4 memory
+保存质量检查结果。  
+设计原因：AI 生成内容可能出现地点串场、对白归属错误、道具遗漏等问题，validation 用于提示作者复核。
 
-```yaml
-memory:
-  timeline: []
-  foreshadows: []
-  unresolved_conflicts: []
-```
-
-设计原因：
-
-小说转剧本不能只处理当前章节，还要保留长期上下文。
-
-* `timeline`：记录事件顺序；
-* `foreshadows`：记录伏笔；
-* `unresolved_conflicts`：记录尚未解决的矛盾。
-
-这部分相当于剧本改编过程中的上下文记忆，防止 AI 看后面忘前面。
-
-### 3.5 scenes
+## 4. 示例片段
 
 ```yaml
 scenes:
-  - id: "scene_001"
-    title: ""
-    source_chapter: 1
-    source_events: []
-    location: ""
-    time: ""
-    characters: []
-    conflict: ""
-    purpose: ""
-    action: []
+  - scene_id: 6
+    title: 仓库对峙
+    chapter_ref: 第三章 钥匙
+    location: 西港17号仓库
+    time: 深夜
+    characters:
+      - 林夏
+      - 顾言
+      - 项目经理
+    conflict: 林夏得知父亲让顾言隐瞒真相，项目经理现身证实幕后操纵。
+    action:
+      - 林夏到达仓库，顾言已等候。
+      - 林夏展示钥匙，顾言称这不是父亲的钥匙。
+      - 两人打开铁门，发现保险箱、录音笔和旧手机。
+    props:
+      - 钥匙
+      - 保险箱
+      - 录音笔
+      - 旧手机
+      - 项目经理的钥匙
     dialogue:
-      - speaker: ""
-        line: ""
-        emotion: ""
-        subtext: ""
-    notes: ""
+      - speaker: 项目经理
+        line: 录音还是被你们找到了。
+        emotion: 冷静
+        subtext: 反派身份开始浮出水面。
+      - speaker: 父亲录音
+        line: 林夏，如果你听到这段录音，说明我可能已经回不去了。
+        emotion: 沉重
+        subtext: 来自录音，不是现场人物对白。
+    purpose: 揭示关键录音内容，引出幕后操纵者。
+    validation:
+      status: pass
+      warnings: []
 ```
 
-设计原因：
+## 5. Schema 设计原因总结
 
-剧本的核心是场景。每个场景必须包含地点、人物、冲突、动作和对白。
+本 Schema 不是只保存“生成文本”，而是把剧本拆成可编辑的数据结构：
 
-字段说明：
+- `story_bible` 负责全局一致性；
+- `scenes` 负责剧本主体；
+- `location / characters / props` 用于防止串场；
+- `dialogue.speaker` 区分人物对白和非现场来源；
+- `validation` 支持后续质量检查和人工复核。
 
-* `id`：场景唯一标识；
-* `title`：场景标题；
-* `source_chapter`：来源章节；
-* `source_events`：来源事件 ID；
-* `location`：场景地点；
-* `time`：场景时间；
-* `characters`：出场人物；
-* `conflict`：本场冲突；
-* `purpose`：本场在剧情中的作用；
-* `action`：动作描写；
-* `dialogue`：对白；
-* `notes`：补充说明。
-
-其中 `source_chapter` 和 `source_events` 是准确性控制的关键字段。它们用于证明场景来自原小说，而不是 AI 凭空生成。
-
-### 3.6 dialogue
-
-```yaml
-dialogue:
-  - speaker: ""
-    line: ""
-    emotion: ""
-    subtext: ""
-```
-
-设计原因：
-
-小说中的心理描写通常不能直接进入剧本，需要转化为对白、动作和潜台词。
-
-字段说明：
-
-* `speaker`：说话人；
-* `line`：对白内容；
-* `emotion`：说话情绪；
-* `subtext`：潜台词。
-
-加入 `emotion` 和 `subtext` 可以让输出更像剧本，而不是简单对话列表。
-
-### 3.7 quality_report
-
-```yaml
-quality_report:
-  event_coverage: 0.0
-  character_consistency: 0.0
-  format_valid: true
-  warnings: []
-```
-
-设计原因：
-
-AI 生成内容需要可检查。质量报告用于提示用户哪些部分可靠，哪些部分需要人工确认。
-
-字段说明：
-
-* `event_coverage`：关键事件覆盖率；
-* `character_consistency`：角色一致性评分；
-* `format_valid`：YAML 格式是否通过校验；
-* `warnings`：需要人工确认的问题。
-
-## 4. 准确性控制设计
-
-为了减少 AI 幻觉，本项目要求每个场景都必须绑定：
-
-```yaml
-source_chapter: 1
-source_events:
-  - "event_001"
-```
-
-这意味着：
-
-1. 每个场景都能追溯到原小说；
-2. 程序可以检查是否出现无来源场景；
-3. 用户可以知道哪些内容是忠实改编，哪些内容是艺术加工；
-4. 后续可以生成准确性报告。
-
-## 5. 为什么不用纯文本剧本格式
-
-纯文本剧本虽然适合阅读，但不适合程序校验和二次处理。
-
-YAML 的优势是：
-
-* 结构清晰；
-* 可读性比 JSON 更好；
-* 能表达层级关系；
-* 能被程序解析；
-* 适合后续导出 Markdown、Word、分镜表等格式。
-
-## 6. 后续扩展方向
-
-Schema 后续可以扩展：
-
-1. `shots`：分镜信息；
-2. `camera`：镜头语言；
-3. `sound`：音效和背景音乐；
-4. `costume`：服装道具；
-5. `duration`：场景时长；
-6. `platform_style`：短剧、网剧、广播剧等平台风格。
-
-## 7. 当前状态
-
-当前文档为初版 Schema 设计，后续会根据功能开发和测试结果继续调整。
+这样可以让小说作者快速获得一个可继续打磨的剧本初稿，而不是只能复制一段不可控的 AI 文本。

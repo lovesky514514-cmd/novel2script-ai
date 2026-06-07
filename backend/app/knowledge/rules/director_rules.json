@@ -1,0 +1,124 @@
+[
+  {
+    "id": "director_001",
+    "category": "director",
+    "title": "导演视角检查可拍性",
+    "rule": "剧本场景应考虑演员动作、机位、调度和空间关系。",
+    "apply_when": [
+      "director_view",
+      "script_doctor"
+    ],
+    "check_points": [
+      "演员能否执行",
+      "镜头能否呈现"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_002",
+    "category": "director",
+    "title": "动作推动剧情",
+    "rule": "演员动作应推动关系、信息或情绪，而非装饰。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "动作是否有功能"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_003",
+    "category": "director",
+    "title": "位置推动关系",
+    "rule": "人物站位、靠近、远离、背对、坐下等位置变化可推动剧情。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "位置是否变化"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_004",
+    "category": "director",
+    "title": "时间可压缩重组",
+    "rule": "影视时间可通过省略、跳跃、倒叙、插叙或并行推进重组。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "时间处理是否合理"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_005",
+    "category": "director",
+    "title": "空间可象征压力",
+    "rule": "封闭、开放、拥挤、空旷的空间可象征人物处境。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "空间是否表达处境"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_006",
+    "category": "director",
+    "title": "声音参与叙事",
+    "rule": "环境声、沉默、音乐和音效可承担情绪和信息功能。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "声音是否有功能"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_007",
+    "category": "director",
+    "title": "转场要有逻辑",
+    "rule": "转场应根据时间变化、空间变化或人物行动设计。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "转场依据是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "director_008",
+    "category": "director",
+    "title": "镜头留给表演空间",
+    "rule": "剧本语言不应过度解释，应给演员和镜头留下表达空间。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否过度说明"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

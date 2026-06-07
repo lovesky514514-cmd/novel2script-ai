@@ -143,31 +143,3 @@ npm run dev
 ## 8. 环境变量
 
 请参考 `.env.example` 或自行创建后端 `.env`。  
-公开仓库中不要上传真实 API Key、账号密码或服务器密钥。
-
-## 9. 提交说明
-
-最终提交内容包括：
-
-- 项目源码；
-- 线上演示地址；
-- Demo 视频链接；
-- YAML Schema 文档；
-- 示例小说 TXT；
-- 生成结果 TXT / YAML；
-- 线上后补丁包和质量守卫说明。
-
-## 10. 安全说明
-
-本仓库不应包含：
-
-```text
-.env
-backend/.env
-backend/.venv/
-frontend/node_modules/
-frontend/dist/
-backend/data/feedback/*.jsonl
-backend/data/feedback/*.md
-*.log
-```

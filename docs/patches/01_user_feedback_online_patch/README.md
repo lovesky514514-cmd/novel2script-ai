@@ -42,6 +42,5 @@ frontend/src/styles.css
 ```text
 Nginx
 证书
-skyzhiyi.cc.cd
 .env
 ```

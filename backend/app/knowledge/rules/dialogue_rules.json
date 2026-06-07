@@ -1,0 +1,157 @@
+[
+  {
+    "id": "dialogue_001",
+    "category": "dialogue",
+    "title": "对白不是解释剧情",
+    "rule": "对白应推动目标、关系、冲突或信息变化。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否只是解释",
+      "是否推动关系"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_002",
+    "category": "dialogue",
+    "title": "对白是语言行动",
+    "rule": "人物说话应服务于试探、威胁、回避、讨好、反击或示弱。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "说话目的是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_003",
+    "category": "dialogue",
+    "title": "潜台词优先",
+    "rule": "人物嘴上说的内容和真实意图可以不一致。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "表层意思是什么",
+      "真实意图是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_004",
+    "category": "dialogue",
+    "title": "亲密关系少说满",
+    "rule": "越亲密的关系越不需要把话说透，可用沉默、称呼和旧物表达。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否过度解释"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_005",
+    "category": "dialogue",
+    "title": "冲突关系可用客气话攻击",
+    "rule": "有矛盾的人物可以用礼貌句子表达攻击。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有反讽或压迫"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_006",
+    "category": "dialogue",
+    "title": "不同人物不同腔调",
+    "rule": "不同人物的词汇、句长、语气和回避方式应有差异。",
+    "apply_when": [
+      "script_doctor",
+      "report_generator"
+    ],
+    "check_points": [
+      "人物声音是否相似"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_007",
+    "category": "dialogue",
+    "title": "删掉无功能台词",
+    "rule": "删掉后不影响剧情、关系、情绪的台词应删除。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "删掉是否影响故事"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_008",
+    "category": "dialogue",
+    "title": "用动作替代解释",
+    "rule": "解释型台词优先改为动作、停顿、转移话题或反问。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否可以动作化"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_009",
+    "category": "dialogue",
+    "title": "对白后关系要变化",
+    "rule": "一段对白结束后，人物关系或信息状态应发生变化。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "关系是否变化"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "dialogue_010",
+    "category": "dialogue",
+    "title": "读剧检查顺口度",
+    "rule": "对白应适合朗读，避免书面化长句。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否能顺口读出"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

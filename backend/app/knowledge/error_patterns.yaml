@@ -1,0 +1,151 @@
+version: 2
+name: novel2script_general_error_patterns
+description: >
+  Generic error knowledge base for Novel2Script.  This file must not contain
+  story-specific character names, story-specific locations, or chapter-number
+  special cases. Validators and final guards should use chapter_facts as the
+  source of truth for the current novel.
+
+patterns:
+  - id: date_text_not_scene_time
+    type: time
+    severity: high
+    problem: "Calendar dates inside prose are misread as scene time labels."
+    examples:
+      - "六月十七日"
+      - "三年前的六月十七日"
+      - "2026年6月17日"
+    ignore_regex:
+      - "\\d{1,2}\\s*月\\s*\\d{1,2}\\s*日"
+      - "[一二三四五六七八九十]+月[一二三四五六七八九十]+日"
+      - "\\d{4}\\s*年\\s*\\d{1,2}\\s*月\\s*\\d{1,2}\\s*日"
+    fix: "Dates are plot facts only; they never decide scene.time."
+
+  - id: current_scene_time_priority
+    type: time
+    severity: high
+    problem: "Future time mentioned in dialogue/SMS overrides current scene time."
+    current_scene_time_keywords:
+      day:
+        - "第二天"
+        - "清晨"
+        - "早晨"
+        - "上午"
+        - "中午"
+        - "下午"
+        - "白天"
+        - "工作日"
+        - "会议"
+        - "公司"
+        - "办公室"
+        - "教室"
+      dusk:
+        - "傍晚"
+        - "黄昏"
+        - "夕阳"
+      night:
+        - "夜"
+        - "夜晚"
+        - "晚上"
+        - "黑暗"
+      deep_night:
+        - "深夜"
+        - "凌晨"
+        - "午夜"
+        - "后半夜"
+        - "十二点"
+    fix: "Prefer chapter_facts.time; only infer time from text when facts are missing."
+
+  - id: offstage_voice_character
+    type: character
+    severity: high
+    problem: "A speaker in recording/phone/SMS/narration is forced into on-stage characters."
+    allow_speaker_markers:
+      - "录音"
+      - "电话"
+      - "短信"
+      - "广播"
+      - "旁白"
+      - "画外音"
+      - "系统提示"
+      - "留言"
+      - "信"
+      - "邮件"
+    fact_fields:
+      - "off_stage_characters"
+      - "mentioned_characters"
+    fix: "Allow speakers from off-stage channels without adding them to scene.characters."
+
+  - id: props_from_current_facts_only
+    type: prop
+    severity: high
+    problem: "Props from other scenes/chapters leak into the current scene."
+    fix: "Final prop line can only use normalized chapter_facts.key_props or scene_unit.props."
+
+  - id: location_words_not_props
+    type: prop
+    severity: medium
+    problem: "Locations are misclassified as props."
+    location_suffixes:
+      - "楼"
+      - "室"
+      - "房"
+      - "厅"
+      - "走廊"
+      - "楼道"
+      - "仓库"
+      - "码头"
+      - "车站"
+      - "医院"
+      - "学校"
+      - "公司"
+      - "办公室"
+      - "家"
+      - "门口"
+      - "巷"
+      - "街"
+      - "路"
+      - "桥"
+    fix: "Remove location-like words from key_props and prop lines."
+
+  - id: multi_location_should_split
+    type: structure
+    severity: medium
+    problem: "Multiple independent locations in one chapter are merged into one scene."
+    fact_fields:
+      - "scene_units"
+      - "locations"
+    separators:
+      - "、"
+      - "，"
+      - ","
+      - ";"
+      - "；"
+      - "和"
+      - "与"
+      - "及"
+    fix: "If chapter_facts.scene_units or locations describe multiple independent spaces, split into several scenes."
+
+  - id: stale_repair_log_noise
+    type: logging
+    severity: low
+    problem: "Old repair logs remain and confuse debugging."
+    stale_phrases:
+      - "strict repaired by chapter-bound planner"
+      - "final bound fields: notes"
+      - "chapter-bound planner"
+    fix: "Filter stale logs from final report."
+
+  - id: chapter_facts_priority
+    type: final_guard
+    severity: critical
+    problem: "Final guard or fallback overwrites Pro-extracted chapter_facts."
+    protected_fields:
+      - "title"
+      - "location"
+      - "time"
+      - "characters"
+      - "props"
+      - "conflict"
+      - "purpose"
+    fix: "Final output is fact-bound. Code may normalize facts, but must not replace them with story-specific templates."

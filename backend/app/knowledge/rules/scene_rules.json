@@ -1,0 +1,156 @@
+[
+  {
+    "id": "scene_001",
+    "category": "scene",
+    "title": "单场戏有目标",
+    "rule": "场景开始时至少一个人物带着明确目标进入。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "谁想得到什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_002",
+    "category": "scene",
+    "title": "单场戏有阻碍",
+    "rule": "场景必须有阻碍目标达成的人、条件、规则或信息差。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "阻碍是谁或什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_003",
+    "category": "scene",
+    "title": "单场戏有交锋",
+    "rule": "场景中应出现试探、压迫、交换、隐瞒、反击或妥协。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有交锋"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_004",
+    "category": "scene",
+    "title": "单场戏有信息增量",
+    "rule": "观众看完一场后应获得新危险、新关系、新真相或新选择。",
+    "apply_when": [
+      "report_generator"
+    ],
+    "check_points": [
+      "新信息是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_005",
+    "category": "scene",
+    "title": "单场戏有情绪变化",
+    "rule": "人物关系或观众情绪应发生变化。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "情绪如何变化"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_006",
+    "category": "scene",
+    "title": "场景不写无功能闲聊",
+    "rule": "无目标、无阻碍、无变化的对话应删除。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否闲聊"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_007",
+    "category": "scene",
+    "title": "场景空间承载关系",
+    "rule": "人物距离、位置、站位和道具可体现关系压力。",
+    "apply_when": [
+      "script_writer",
+      "director_view"
+    ],
+    "check_points": [
+      "空间是否有关系含义"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_008",
+    "category": "scene",
+    "title": "场景结尾推动下一场",
+    "rule": "本场结尾应自然引出下一场行动或问题。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "下一场问题是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_009",
+    "category": "scene",
+    "title": "场景标题清楚",
+    "rule": "场景标题应说明地点、时间和基本场景属性。",
+    "apply_when": [
+      "schema_validator"
+    ],
+    "check_points": [
+      "地点是否清楚",
+      "时间是否清楚"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "scene_010",
+    "category": "scene",
+    "title": "场景可被拍摄",
+    "rule": "场景内容应能被表演、摄影、声音或剪辑呈现。",
+    "apply_when": [
+      "director_view",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否可拍摄"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

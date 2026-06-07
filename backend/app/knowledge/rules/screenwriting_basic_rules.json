@@ -1,0 +1,172 @@
+[
+  {
+    "id": "screen_basic_001",
+    "category": "screenwriting_basic",
+    "title": "剧本以场为基本单位",
+    "rule": "剧本内容应以场为单位组织，每场包含地点、时间、人物、动作、对白和功能。",
+    "apply_when": [
+      "script_writer",
+      "schema_validator"
+    ],
+    "check_points": [
+      "是否有场景地点",
+      "是否有人物行动",
+      "是否有本场功能"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_002",
+    "category": "screenwriting_basic",
+    "title": "剧本写可见内容",
+    "rule": "抽象心理应转化为动作、道具、空间、声音或沉默。",
+    "apply_when": [
+      "script_writer",
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否能被拍摄",
+      "是否能被演员表演",
+      "是否避免直接心理说明"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_003",
+    "category": "screenwriting_basic",
+    "title": "每场戏必须有目的",
+    "rule": "每场戏至少推动情节、人物关系、情绪或主题中的一项。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "本场目的是什么",
+      "删掉本场是否影响故事",
+      "是否产生新信息"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_004",
+    "category": "screenwriting_basic",
+    "title": "主题通过选择显现",
+    "rule": "主题不应由人物直接说教，应通过人物在压力下的选择呈现。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有关键选择",
+      "是否避免口号化台词"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_005",
+    "category": "screenwriting_basic",
+    "title": "冲突是目标不兼容",
+    "rule": "冲突不是吵架，而是人物目标、信息、利益或情感之间的不可兼容。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "双方目标是否冲突",
+      "冲突是否能推动场景"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_006",
+    "category": "screenwriting_basic",
+    "title": "高潮是关键选择",
+    "rule": "高潮不是最大场面，而是人物必须做出不可回避的选择。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "是否有选择",
+      "选择是否改变人物命运"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_007",
+    "category": "screenwriting_basic",
+    "title": "情节是因果链",
+    "rule": "事件之间应形成因为所以关系，避免流水账。",
+    "apply_when": [
+      "memory_builder",
+      "script_writer"
+    ],
+    "check_points": [
+      "事件之间是否有因果",
+      "是否只是连续发生"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_008",
+    "category": "screenwriting_basic",
+    "title": "开端建立处境",
+    "rule": "开端应快速交代人物处境、目标、压力和问题。",
+    "apply_when": [
+      "script_writer"
+    ],
+    "check_points": [
+      "主角是谁",
+      "主角想要什么",
+      "阻碍是什么"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_009",
+    "category": "screenwriting_basic",
+    "title": "结尾回应变化",
+    "rule": "结尾应回应人物变化、关系变化或主题落点。",
+    "apply_when": [
+      "script_writer",
+      "report_generator"
+    ],
+    "check_points": [
+      "人物是否改变",
+      "问题是否有阶段性回应"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  },
+  {
+    "id": "screen_basic_010",
+    "category": "screenwriting_basic",
+    "title": "视听服务情绪",
+    "rule": "画面、声音、空间和动作应服务人物情绪和场景目标。",
+    "apply_when": [
+      "script_doctor"
+    ],
+    "check_points": [
+      "是否有可见情绪",
+      "是否有声音或空间提示"
+    ],
+    "example_before": "",
+    "example_after": "",
+    "source_note": "根据项目知识库 v2 规则整理。"
+  }
+]

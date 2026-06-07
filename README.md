@@ -1,296 +1,172 @@
 # Novel2Script AI
 
-> 七牛云 × XEngineer 暑期实训营第三批次议题三：AI 小说转剧本工具
+Novel2Script AI 是一个面向小说文本改编的 AI 工具原型，用于将小说章节转换为结构化分场剧本。
 
-Novel2Script AI 是一个面向小说作者的 AI 辅助剧本改编工具。项目目标是将 3 个章节以上的小说文本自动转换为结构化剧本 YAML，让作者能够快速获得可编辑、可继续打磨的剧本初稿。
+本项目不是单纯聊天页面，而是围绕“小说上传 → 章节事实抽取 → 分场剧本生成 → 质量校验 → 错误知识库沉淀 → 结构化导出”的完整工作流实现。
 
-可访问网站:
-
-```
-https://n2s.cc.cd
-```
-
-上线补丁文件:
-
-```
-docs/patches/
-├─ 01_user_feedback_online_patch
-├─ 02_mobile_adaptation_one_click_patch
-├─ 03_wechat_miniprogram_deploy_package
-└─ README.md
-```
-
-本项目不是简单地把小说一次性丢给大模型生成剧本，而是设计为一个多阶段 AI 改编工作流：
+## 当前版本
 
 ```text
-小说文本输入
-↓
-章节切分
-↓
-人物 / 事件 / 场景 / 伏笔提取
-↓
-小说事实记忆库
-↓
-剧本专家 Agent 改编
-↓
-剧本医生 Agent 二次优化
-↓
-YAML Schema 校验
-↓
-自动修复
-↓
-结构化剧本预览与导出
+day2_fullstack_polish
 ```
 
-## 对应议题
+## 核心功能
 
-题目三：AI 小说转剧本工具。
+- 小说文本文件上传；
+- 用户补充改编要求；
+- 章节解析与基础事实抽取；
+- `story_bible` / `chapter_facts` 生成；
+- 分场剧本预览；
+- YAML / TXT 导出；
+- 右侧继续修改；
+- 生成中进度页与阶段提示；
+- `validation_report` / `quality_report` 质量报告；
+- `model_trace` 模型链路追踪；
+- `repair_questions` 修复问题记录；
+- `error_patterns.yaml` 错误知识库；
+- 一键启动前后端。
 
-要求：
-
-- 能将 3 个章节以上的小说文本自动转换为结构化剧本；
-- 输出格式为 YAML；
-- 需要提供 YAML Schema 文档；
-- Schema 文档需说明字段设计原因；
-- 作品需具备完整 README、Demo 视频和可访问代码仓库。
-
-## 项目定位
-
-很多小说作者在改编剧本时会遇到这些问题：
-
-1. 长文本改编时容易遗忘前文人物、伏笔和事件；
-2. AI 直接生成剧本时容易胡编、漏情节、人物性格漂移；
-3. 普通文本输出不便于后续编辑、拆分和二次创作；
-4. 剧本格式不统一，难以被工具继续处理。
-
-Novel2Script AI 重点解决：
-
-- 长上下文下的信息丢失问题；
-- 小说到剧本的结构化转换问题；
-- AI 输出的格式稳定性问题；
-- 剧本初稿的可读性和可编辑性问题。
-
-## 核心功能规划
-
-### 1. 多章节小说输入
-
-支持用户输入不少于 3 个章节的小说文本，系统会自动识别章节边界，并进入后续改编流程。
-
-### 2. 小说事实抽取
-
-系统会从小说中抽取：
-
-- 角色
-- 人物关系
-- 关键事件
-- 场景地点
-- 时间线
-- 情绪变化
-- 冲突
-- 伏笔
-
-这些信息会组成小说事实记忆库，供后续剧本生成使用。
-
-### 3. 剧本专家 Agent
-
-剧本专家 Agent 根据剧作知识库和小说事实记忆库，将小说内容改编为结构化剧本。
-
-重点处理：
-
-- 把叙述改成可表演的动作；
-- 把心理描写转成对白、神态和行为；
-- 保留主要事件与人物动机；
-- 增强场景冲突和节奏。
-
-### 4. 剧本医生 Agent
-
-剧本医生 Agent 对初稿进行二次检查与优化。
-
-检查内容包括：
-
-- 人物是否前后一致；
-- 对白是否自然；
-- 冲突是否明确；
-- 场景是否可表演；
-- 是否出现原文不存在的重要人物；
-- 是否遗漏关键事件。
-
-### 5. YAML Schema 校验
-
-系统会使用预定义 YAML Schema 对输出进行校验，确保最终结果结构稳定、字段完整、可继续编辑。
-
-### 6. 准确性报告
-
-系统会生成改编准确性报告，包括：
-
-- 事件覆盖率；
-- 角色一致性；
-- 伏笔保留情况；
-- YAML 格式合规率；
-- 需要人工确认的位置。
-
-## 技术路线
+## 技术架构
 
 ### 前端
-
-计划使用：
 
 - React
 - Vite
 - CSS 动效
-- 卡片化结果展示
-- YAML 预览
-- 步骤流进度展示
-
-前端风格参考云产品官网常见的简洁科技风：蓝白渐变、大留白、轻动效、分区卡片和清晰流程。
+- 文件上传
+- 生成进度页
+- 分场剧本预览
+- YAML / TXT 下载
+- 继续修改输入框
 
 ### 后端
-
-计划使用：
 
 - FastAPI
 - Pydantic
 - PyYAML
-- SQLite / JSON 本地缓存
-- AIClient 统一模型调用
-- Workflow 多阶段任务编排
-- Trace 日志记录
-
-### AI 工作流
-
-计划实现：
-
-```text
-Input Parser
-↓
-Memory Builder
-↓
-Context Builder
-↓
-Script Planner
-↓
-YAML Generator
-↓
-Schema Validator
-↓
-Repair Agent
-↓
-Report Generator
-```
-
-## 准确性设计
-
-本项目通过三层机制提升小说转剧本的准确性。
-
-### 1. 事实保真层
-
-先抽取小说中的角色、事件、地点、时间线和伏笔，形成事实记忆库。后续剧本生成必须引用这些事实，减少 AI 幻觉。
-
-### 2. 剧作增强层
-
-通过剧作规则库和剧本医生 Agent，增强对白、动作、冲突和节奏，避免输出像简单 AI 改写。
-
-### 3. 格式校验层
-
-使用 YAML Schema 校验输出结构，字段缺失或格式错误时进入自动修复流程。
-
-## YAML Schema
-
-项目的 YAML Schema 文档见：
-
-```text
-docs/yaml_schema.md
-```
-
-Schema 设计目标：
-
-- 保留小说来源信息；
-- 支持角色、场景、对白、动作、冲突的结构化表达；
-- 支持 source_chapter 和 source_events 进行原文追溯；
-- 方便后续编辑、导出和二次创作。
-
-## Demo 视频
-
-Demo 视频将在项目主要功能完成后补充。
-
-当前状态：
-
-```text
-待补充
-```
+- DeepSeek API
+- 异步任务管理
+- chapter_facts 事实绑定
+- YAML 结构化输出
+- validation_report / quality_report
+- error_patterns.yaml 错误知识库
 
 ## 本地运行
 
-当前项目处于初始化阶段，后续将补充前后端启动方式。
-
-计划结构：
-
-```text
-novel2script-ai/
-├─ frontend/
-├─ backend/
-├─ docs/
-├─ examples/
-└─ README.md
-```
-
-## 第三方依赖说明
-
-当前阶段已初始化后端 FastAPI 骨架，并引入后端基础依赖。
-
-后续如引入新的第三方库，将在此处持续更新。
-
-计划使用的依赖包括：
-
-| 类型 | 计划依赖 | 用途 |
-|---|---|---|
-| 前端 | React | 构建用户界面 |
-| 前端 | Vite | 前端开发与打包 |
-| 后端 | FastAPI | 提供后端 API |
-| 后端 | Pydantic | 数据结构校验 |
-| 后端 | PyYAML | YAML 解析与导出 |
-| 后端 | httpx | 调用 AI API |
-| 存储 | SQLite / JSON | 保存缓存、历史记录和记忆数据 |
-
-## 原创与复用说明
-
-本项目为七牛云 × XEngineer 暑期实训营第三批次议题作品，围绕本批次题目重新设计和开发。
-
-项目会参考本人历史项目中的部分设计经验：
-
-- 参考 SKY职忆 的前端工作台、卡片化展示和轻量动效思路；
-- 参考 SKY蓝天 的记忆精炼和长期上下文管理思路；
-- 参考 sky_paper_verifier 的多阶段校验、置信度报告和证据链展示思路；
-- 参考 career-memory-refinement 的任务相关上下文压缩思路。
-
-如后续复用本人历史项目中的具体代码片段，会在对应 PR 描述中注明来源。
-
-详细说明见：
+1. 进入项目根目录。
+2. 打开 `backend/.env`。
+3. 填写 DeepSeek API Key。
+4. 双击：
 
 ```text
-docs/reuse_statement.md
+start_one_click.bat
 ```
 
-## 开发日志
-
-持续开发记录见：
+启动后会自动启动：
 
 ```text
-docs/dev_log.md
+FastAPI 后端：http://127.0.0.1:8000
+React 前端：http://127.0.0.1:5173
 ```
 
-## 当前开发状态
+## API Key 配置
 
-- [x] 创建项目仓库
-- [x] 初始化 README
-- [x] 初始化 YAML Schema 文档
-- [x] 初始化复用说明
-- [x] 初始化 PR 模板
-- [x] 搭建后端 FastAPI 骨架
-- [x] 搭建前端 React 工作台
-- [x] 实现小说章节切分
-- [x] 实现事实记忆库
-- [x] 实现剧本 YAML 生成
-- [x] 实现 Schema 校验和自动修复
-- [x] 实现前端可视化预览
-- [ ] 补充 Demo 视频
+在 `backend/.env` 中填写：
+
+```text
+AI_PROVIDER=deepseek
+AI_API_KEY=你的 DeepSeek Key
+AI_BASE_URL=https://api.deepseek.com/v1
+AI_CHAT_MODEL=deepseek-chat
+AI_PRO_MODEL=deepseek-reasoner
+```
+
+公开仓库中不要提交真实 API Key。
+
+## 目录结构
+
+```text
+backend/
+  app/
+    api/
+    core/
+    knowledge/
+    models/
+    services/
+  tests/
+
+frontend/
+  public/
+  src/
+
+docs/
+  dev_log.md
+  logging_privacy.md
+  reuse_statement.md
+  submission_checklist.md
+  yaml_schema.md
+
+run_app.py
+start_one_click.bat
+README.md
+```
+
+## 错误知识库
+
+错误知识库文件：
+
+```text
+backend/app/knowledge/error_patterns.yaml
+```
+
+当前用于沉淀常见生成问题，例如：
+
+- 日期中的“日”被误判为场景时间；
+- 短信/录音人物被误判为现场人物；
+- 地点词被误判为道具；
+- 不同章节道具串场；
+- 多地点章节需要拆场；
+- 旧修复日志干扰最终判断。
+
+## 日志与隐私说明
+
+本项目提供本地运行追踪能力，用于排查模型调用、章节事实抽取、生成校验和错误修复过程。
+
+公开仓库不包含：
+
+- 真实 API Key；
+- 用户上传的小说原文；
+- 真实运行日志；
+- 真实模型响应全文；
+- `debug_runs` 调试目录。
+
+系统保留的追踪字段包括：
+
+- `model_trace`
+- `chapter_facts`
+- `repair_questions`
+- `validation_report`
+- `quality_report`
+- `error_patterns.yaml`
+
+这些字段用于解释生成过程和改进错误知识库，不用于公开保存用户隐私文本。
+
+## 比赛提交说明
+
+本项目使用 DeepSeek API 作为大模型能力来源，前后端、流程编排、事实绑定、错误知识库、校验报告和导出结构均围绕本项目重新实现。
+
+项目不内置未授权小说、影视剧本或课程内容。演示时建议使用自写样例文本或已授权文本。
+
+## GitHub 分支说明
+
+Day 2 任务建议提交到分支：
+
+```text
+feature/day2-fullstack-polish
+```
+
+建议提交信息：
+
+```text
+Day 2: integrate fullstack Novel2Script pipeline
+```
